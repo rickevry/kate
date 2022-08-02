@@ -1,0 +1,89 @@
+{
+  "name": "@udecode/plate-kate",
+  "version": "15.0.5",
+  "description": "kate",
+  "license": "MIT",
+  "homepage": "https://plate.udecode.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/udecode/plate.git",
+    "directory": "packages/kate"
+  },
+  "bugs": {
+    "url": "https://github.com/udecode/plate/issues"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@types/papaparse": "^5",
+    "@udecode/plate-alignment": "15.0.3",
+    "@udecode/plate-basic-marks": "15.0.3",
+    "@udecode/plate-block-quote": "15.0.3",
+    "@udecode/plate-break": "15.0.3",
+    "@udecode/plate-code-block": "15.0.3",
+    "@udecode/plate-combobox": "15.0.4",
+    "@udecode/plate-core": "15.0.3",
+    "@udecode/plate-font": "15.0.3",
+    "@udecode/plate-heading": "15.0.3",
+    "@udecode/plate-highlight": "15.0.3",
+    "@udecode/plate-horizontal-rule": "15.0.3",
+    "@udecode/plate-image": "15.0.3",
+    "@udecode/plate-indent": "15.0.3",
+    "@udecode/plate-juice": "15.0.3",
+    "@udecode/plate-kbd": "15.0.3",
+    "@udecode/plate-link": "15.0.3",
+    "@udecode/plate-list": "15.0.3",
+    "@udecode/plate-media-embed": "15.0.3",
+    "@udecode/plate-mention": "15.0.4",
+    "@udecode/plate-node-id": "15.0.3",
+    "@udecode/plate-normalizers": "15.0.3",
+    "@udecode/plate-paragraph": "15.0.3",
+    "@udecode/plate-reset-node": "15.0.3",
+    "@udecode/plate-select": "15.0.3",
+    "@udecode/plate-serializer-csv": "15.0.3",
+    "@udecode/plate-serializer-docx": "15.0.3",
+    "@udecode/plate-serializer-md": "15.0.3",
+    "@udecode/plate-styled-components": "15.0.3",
+    "@udecode/plate-table": "15.0.3",
+    "@udecode/plate-trailing-block": "15.0.3",
+    "@udecode/plate-ui": "15.0.3",
+    "@udecode/plate-ui-code-block": "15.0.3",
+    "@udecode/plate-ui-dnd": "15.0.3",
+    "@udecode/plate-ui-toolbar": "15.0.3",
+    "papaparse": "^5.3.2",
+    "prismjs": "^1.25.0",
+    "react-dnd": ">=14.0.0",
+    "react-dnd-html5-backend": ">=14.0.0"
+  },
+  "peerDependencies": {
+    "@types/papaparse": "^5",
+    "papaparse": "^5.3.2",
+    "prismjs": "^1.25.0",
+    "react": ">=16.8.0",
+    "react-dnd": ">=14.0.0",
+    "react-dnd-html5-backend": ">=14.0.0",
+    "react-dom": ">=16.8.0",
+    "slate": ">=0.66.1",
+    "slate-history": ">=0.66.0",
+    "slate-react": ">=0.74.2"
+  },
+  "devDependencies": {
+    "@types/papaparse": "^5",
+    "papaparse": "^5.3.2",
+    "prismjs": "^1.25.0",
+    "react-dnd": ">=14.0.0",
+    "react-dnd-html5-backend": ">=14.0.0"
+  },
+  "keywords": [
+    "plate",
+    "plugin",
+    "slate"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

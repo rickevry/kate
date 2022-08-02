@@ -3643,6 +3643,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-dnd/asap@npm:^5.0.1":
+  version: 5.0.2
+  resolution: "@react-dnd/asap@npm:5.0.2"
+  checksum: 6775539cf4cfc368791dc935e42ed33137af683d7de291dea5d475a50d24531689e9efc249da1fce9c707c04d52c30ee6b86c83c6de034f6cf4c7ea6ed541093
+  languageName: node
+  linkType: hard
+
 "@react-dnd/invariant@npm:3.0.1":
   version: 3.0.1
   resolution: "@react-dnd/invariant@npm:3.0.1"
@@ -3650,10 +3657,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-dnd/invariant@npm:^4.0.1":
+  version: 4.0.2
+  resolution: "@react-dnd/invariant@npm:4.0.2"
+  checksum: b69665aab308b9bdd0eb231dd839b6cf803e7df5d15231c5f3e96b6b42d7471dd188ee924301466d86e4df056e4e95376f603afad50b78773458103d1b83f02b
+  languageName: node
+  linkType: hard
+
 "@react-dnd/shallowequal@npm:3.0.1":
   version: 3.0.1
   resolution: "@react-dnd/shallowequal@npm:3.0.1"
   checksum: db18ecaacb2388e99ffcf6fb820e046a30dbb57d6e0a716426c7fc746d2860b9a27280e9f93b125ce5ccd508aef0a0f35ace3e834d76d98e3ba6304ba8f5c896
+  languageName: node
+  linkType: hard
+
+"@react-dnd/shallowequal@npm:^4.0.1":
+  version: 4.0.2
+  resolution: "@react-dnd/shallowequal@npm:4.0.2"
+  checksum: 1c23d7038e88a658b7264c6818ff6e9bcff9c1773153ce604a5e5f3728978a99b8966595733d97ebd444be7737fb62c9505ce35e43c5033ecfb151feab2e95e0
   languageName: node
   linkType: hard
 
@@ -4893,11 +4914,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@udecode/plate-alignment@npm:15.0.0, @udecode/plate-alignment@workspace:packages/nodes/alignment":
+"@udecode/plate-alignment@npm:15.0.3, @udecode/plate-alignment@workspace:packages/nodes/alignment":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-alignment@workspace:packages/nodes/alignment"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -4907,11 +4928,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-autoformat@npm:15.0.0, @udecode/plate-autoformat@workspace:packages/editor/autoformat":
+"@udecode/plate-autoformat@npm:15.0.3, @udecode/plate-autoformat@workspace:packages/editor/autoformat":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-autoformat@workspace:packages/editor/autoformat"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -4921,15 +4942,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-basic-elements@npm:15.0.0, @udecode/plate-basic-elements@workspace:packages/nodes/basic-elements":
+"@udecode/plate-basic-elements@npm:15.0.3, @udecode/plate-basic-elements@workspace:packages/nodes/basic-elements":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-basic-elements@workspace:packages/nodes/basic-elements"
   dependencies:
-    "@udecode/plate-block-quote": "npm:15.0.0"
-    "@udecode/plate-code-block": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-heading": "npm:15.0.0"
-    "@udecode/plate-paragraph": "npm:15.0.0"
+    "@udecode/plate-block-quote": "npm:15.0.3"
+    "@udecode/plate-code-block": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-heading": "npm:15.0.3"
+    "@udecode/plate-paragraph": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -4939,11 +4960,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-basic-marks@npm:15.0.0, @udecode/plate-basic-marks@workspace:packages/nodes/basic-marks":
+"@udecode/plate-basic-marks@npm:15.0.3, @udecode/plate-basic-marks@workspace:packages/nodes/basic-marks":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-basic-marks@workspace:packages/nodes/basic-marks"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -4953,11 +4974,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-block-quote@npm:15.0.0, @udecode/plate-block-quote@workspace:packages/nodes/block-quote":
+"@udecode/plate-block-quote@npm:15.0.3, @udecode/plate-block-quote@workspace:packages/nodes/block-quote":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-block-quote@workspace:packages/nodes/block-quote"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -4967,11 +4988,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-break@npm:15.0.0, @udecode/plate-break@workspace:packages/editor/break":
+"@udecode/plate-break@npm:15.0.3, @udecode/plate-break@workspace:packages/editor/break":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-break@workspace:packages/editor/break"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -4981,11 +5002,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-button@npm:15.0.0, @udecode/plate-button@workspace:packages/button":
+"@udecode/plate-button@npm:15.0.3, @udecode/plate-button@workspace:packages/button":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-button@workspace:packages/button"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -4995,11 +5016,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-code-block@npm:15.0.0, @udecode/plate-code-block@workspace:packages/nodes/code-block":
+"@udecode/plate-code-block@npm:15.0.3, @udecode/plate-code-block@workspace:packages/nodes/code-block":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-code-block@workspace:packages/nodes/code-block"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
     prismjs: "npm:^1.25.0"
   peerDependencies:
     react: ">=16.8.0"
@@ -5010,12 +5031,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-combobox@npm:15.0.0, @udecode/plate-combobox@workspace:packages/editor/combobox":
+"@udecode/plate-combobox@npm:15.0.3, @udecode/plate-combobox@workspace:packages/editor/combobox":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-combobox@workspace:packages/editor/combobox"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-floating": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-floating": "npm:15.0.3"
     downshift: "npm:^6.1.7"
   peerDependencies:
     react: ">=16.8.0"
@@ -5026,7 +5047,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-core@npm:15.0.0, @udecode/plate-core@workspace:packages/core":
+"@udecode/plate-core@npm:15.0.3, @udecode/plate-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-core@workspace:packages/core"
   dependencies:
@@ -5047,11 +5068,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-find-replace@npm:15.0.0, @udecode/plate-find-replace@workspace:packages/decorators/find-replace":
+"@udecode/plate-find-replace@npm:15.0.3, @udecode/plate-find-replace@workspace:packages/decorators/find-replace":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-find-replace@workspace:packages/decorators/find-replace"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5061,12 +5082,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-floating@npm:15.0.0, @udecode/plate-floating@workspace:packages/floating":
+"@udecode/plate-floating@npm:15.0.3, @udecode/plate-floating@workspace:packages/floating":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-floating@workspace:packages/floating"
   dependencies:
     "@floating-ui/react-dom-interactions": "npm:^0.6.6"
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5076,11 +5097,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-font@npm:15.0.0, @udecode/plate-font@workspace:packages/nodes/font":
+"@udecode/plate-font@npm:15.0.3, @udecode/plate-font@workspace:packages/nodes/font":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-font@workspace:packages/nodes/font"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5090,11 +5111,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-heading@npm:15.0.0, @udecode/plate-heading@workspace:packages/nodes/heading":
+"@udecode/plate-heading@npm:15.0.3, @udecode/plate-heading@workspace:packages/nodes/heading":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-heading@workspace:packages/nodes/heading"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5104,46 +5125,97 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-headless@npm:15.0.1, @udecode/plate-headless@workspace:packages/headless":
+"@udecode/plate-headless@npm:15.0.3":
+  version: 15.0.3
+  resolution: "@udecode/plate-headless@npm:15.0.3"
+  dependencies:
+    "@udecode/plate-alignment": "npm:15.0.3"
+    "@udecode/plate-autoformat": "npm:15.0.3"
+    "@udecode/plate-basic-elements": "npm:15.0.3"
+    "@udecode/plate-basic-marks": "npm:15.0.3"
+    "@udecode/plate-block-quote": "npm:15.0.3"
+    "@udecode/plate-break": "npm:15.0.3"
+    "@udecode/plate-button": "npm:15.0.3"
+    "@udecode/plate-code-block": "npm:15.0.3"
+    "@udecode/plate-combobox": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-find-replace": "npm:15.0.3"
+    "@udecode/plate-floating": "npm:15.0.3"
+    "@udecode/plate-font": "npm:15.0.3"
+    "@udecode/plate-heading": "npm:15.0.3"
+    "@udecode/plate-highlight": "npm:15.0.3"
+    "@udecode/plate-horizontal-rule": "npm:15.0.3"
+    "@udecode/plate-image": "npm:15.0.3"
+    "@udecode/plate-indent": "npm:15.0.3"
+    "@udecode/plate-indent-list": "npm:15.0.3"
+    "@udecode/plate-kbd": "npm:15.0.3"
+    "@udecode/plate-line-height": "npm:15.0.3"
+    "@udecode/plate-link": "npm:15.0.3"
+    "@udecode/plate-list": "npm:15.0.3"
+    "@udecode/plate-media-embed": "npm:15.0.3"
+    "@udecode/plate-mention": "npm:15.0.3"
+    "@udecode/plate-node-id": "npm:15.0.3"
+    "@udecode/plate-normalizers": "npm:15.0.3"
+    "@udecode/plate-paragraph": "npm:15.0.3"
+    "@udecode/plate-reset-node": "npm:15.0.3"
+    "@udecode/plate-select": "npm:15.0.3"
+    "@udecode/plate-serializer-csv": "npm:15.0.3"
+    "@udecode/plate-serializer-docx": "npm:15.0.3"
+    "@udecode/plate-serializer-html": "npm:15.0.3"
+    "@udecode/plate-serializer-md": "npm:15.0.3"
+    "@udecode/plate-table": "npm:15.0.3"
+    "@udecode/plate-trailing-block": "npm:15.0.3"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+    slate: ">=0.66.1"
+    slate-history: ">=0.66.0"
+    slate-hyperscript: ">=0.66.0"
+    slate-react: ">=0.74.2"
+  checksum: cb232b8f8e5d476d4bb62454479bf739f22d3ba274c2e6f0d5ec2ddb19702495e391f118a49c4fcda06af86e68a97358a8c2f46778453d3c26609bec90bd32dc
+  languageName: node
+  linkType: hard
+
+"@udecode/plate-headless@npm:15.0.5, @udecode/plate-headless@workspace:packages/headless":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-headless@workspace:packages/headless"
   dependencies:
-    "@udecode/plate-alignment": "npm:15.0.0"
-    "@udecode/plate-autoformat": "npm:15.0.0"
-    "@udecode/plate-basic-elements": "npm:15.0.0"
-    "@udecode/plate-basic-marks": "npm:15.0.0"
-    "@udecode/plate-block-quote": "npm:15.0.0"
-    "@udecode/plate-break": "npm:15.0.0"
-    "@udecode/plate-button": "npm:15.0.0"
-    "@udecode/plate-code-block": "npm:15.0.0"
-    "@udecode/plate-combobox": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-find-replace": "npm:15.0.0"
-    "@udecode/plate-floating": "npm:15.0.0"
-    "@udecode/plate-font": "npm:15.0.0"
-    "@udecode/plate-heading": "npm:15.0.0"
-    "@udecode/plate-highlight": "npm:15.0.0"
-    "@udecode/plate-horizontal-rule": "npm:15.0.0"
-    "@udecode/plate-image": "npm:15.0.0"
-    "@udecode/plate-indent": "npm:15.0.0"
-    "@udecode/plate-indent-list": "npm:15.0.0"
-    "@udecode/plate-kbd": "npm:15.0.0"
-    "@udecode/plate-line-height": "npm:15.0.0"
-    "@udecode/plate-link": "npm:15.0.1"
-    "@udecode/plate-list": "npm:15.0.0"
-    "@udecode/plate-media-embed": "npm:15.0.0"
-    "@udecode/plate-mention": "npm:15.0.0"
-    "@udecode/plate-node-id": "npm:15.0.0"
-    "@udecode/plate-normalizers": "npm:15.0.0"
-    "@udecode/plate-paragraph": "npm:15.0.0"
-    "@udecode/plate-reset-node": "npm:15.0.0"
-    "@udecode/plate-select": "npm:15.0.0"
-    "@udecode/plate-serializer-csv": "npm:15.0.0"
-    "@udecode/plate-serializer-docx": "npm:15.0.0"
-    "@udecode/plate-serializer-html": "npm:15.0.0"
-    "@udecode/plate-serializer-md": "npm:15.0.1"
-    "@udecode/plate-table": "npm:15.0.0"
-    "@udecode/plate-trailing-block": "npm:15.0.0"
+    "@udecode/plate-alignment": "npm:15.0.3"
+    "@udecode/plate-autoformat": "npm:15.0.3"
+    "@udecode/plate-basic-elements": "npm:15.0.3"
+    "@udecode/plate-basic-marks": "npm:15.0.3"
+    "@udecode/plate-block-quote": "npm:15.0.3"
+    "@udecode/plate-break": "npm:15.0.3"
+    "@udecode/plate-button": "npm:15.0.3"
+    "@udecode/plate-code-block": "npm:15.0.3"
+    "@udecode/plate-combobox": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-find-replace": "npm:15.0.3"
+    "@udecode/plate-floating": "npm:15.0.3"
+    "@udecode/plate-font": "npm:15.0.3"
+    "@udecode/plate-heading": "npm:15.0.3"
+    "@udecode/plate-highlight": "npm:15.0.3"
+    "@udecode/plate-horizontal-rule": "npm:15.0.3"
+    "@udecode/plate-image": "npm:15.0.3"
+    "@udecode/plate-indent": "npm:15.0.3"
+    "@udecode/plate-indent-list": "npm:15.0.3"
+    "@udecode/plate-kbd": "npm:15.0.3"
+    "@udecode/plate-line-height": "npm:15.0.3"
+    "@udecode/plate-link": "npm:15.0.5"
+    "@udecode/plate-list": "npm:15.0.3"
+    "@udecode/plate-media-embed": "npm:15.0.3"
+    "@udecode/plate-mention": "npm:15.0.3"
+    "@udecode/plate-node-id": "npm:15.0.3"
+    "@udecode/plate-normalizers": "npm:15.0.3"
+    "@udecode/plate-paragraph": "npm:15.0.3"
+    "@udecode/plate-reset-node": "npm:15.0.3"
+    "@udecode/plate-select": "npm:15.0.3"
+    "@udecode/plate-serializer-csv": "npm:15.0.3"
+    "@udecode/plate-serializer-docx": "npm:15.0.3"
+    "@udecode/plate-serializer-html": "npm:15.0.3"
+    "@udecode/plate-serializer-md": "npm:15.0.5"
+    "@udecode/plate-table": "npm:15.0.3"
+    "@udecode/plate-trailing-block": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5154,11 +5226,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-highlight@npm:15.0.0, @udecode/plate-highlight@workspace:packages/nodes/highlight":
+"@udecode/plate-highlight@npm:15.0.3, @udecode/plate-highlight@workspace:packages/nodes/highlight":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-highlight@workspace:packages/nodes/highlight"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5168,11 +5240,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-horizontal-rule@npm:15.0.0, @udecode/plate-horizontal-rule@workspace:packages/nodes/horizontal-rule":
+"@udecode/plate-horizontal-rule@npm:15.0.3, @udecode/plate-horizontal-rule@workspace:packages/nodes/horizontal-rule":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-horizontal-rule@workspace:packages/nodes/horizontal-rule"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5182,11 +5254,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-image@npm:15.0.0, @udecode/plate-image@workspace:packages/nodes/image":
+"@udecode/plate-image@npm:15.0.3, @udecode/plate-image@workspace:packages/nodes/image":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-image@workspace:packages/nodes/image"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
     re-resizable: "npm:^6.9.9"
     react-textarea-autosize: "npm:^8.3.3"
   peerDependencies:
@@ -5198,13 +5270,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-indent-list@npm:15.0.0, @udecode/plate-indent-list@workspace:packages/nodes/indent-list":
+"@udecode/plate-indent-list@npm:15.0.3, @udecode/plate-indent-list@workspace:packages/nodes/indent-list":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-indent-list@workspace:packages/nodes/indent-list"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-indent": "npm:15.0.0"
-    "@udecode/plate-list": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-indent": "npm:15.0.3"
+    "@udecode/plate-list": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5214,11 +5286,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-indent@npm:15.0.0, @udecode/plate-indent@workspace:packages/nodes/indent":
+"@udecode/plate-indent@npm:15.0.3, @udecode/plate-indent@workspace:packages/nodes/indent":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-indent@workspace:packages/nodes/indent"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5228,11 +5300,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-juice@workspace:^, @udecode/plate-juice@workspace:packages/serializers/juice":
+"@udecode/plate-juice@npm:15.0.3, @udecode/plate-juice@workspace:^, @udecode/plate-juice@workspace:packages/serializers/juice":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-juice@workspace:packages/serializers/juice"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
     juice: "npm:^8.0.0"
   peerDependencies:
     react: ">=16.8.0"
@@ -5243,11 +5315,68 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-kbd@npm:15.0.0, @udecode/plate-kbd@workspace:packages/nodes/kbd":
+"@udecode/plate-kate@workspace:packages/kate":
+  version: 0.0.0-use.local
+  resolution: "@udecode/plate-kate@workspace:packages/kate"
+  dependencies:
+    "@types/papaparse": "npm:^5"
+    "@udecode/plate-alignment": "npm:15.0.3"
+    "@udecode/plate-basic-marks": "npm:15.0.3"
+    "@udecode/plate-block-quote": "npm:15.0.3"
+    "@udecode/plate-break": "npm:15.0.3"
+    "@udecode/plate-code-block": "npm:15.0.3"
+    "@udecode/plate-combobox": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-font": "npm:15.0.3"
+    "@udecode/plate-heading": "npm:15.0.3"
+    "@udecode/plate-highlight": "npm:15.0.3"
+    "@udecode/plate-horizontal-rule": "npm:15.0.3"
+    "@udecode/plate-image": "npm:15.0.3"
+    "@udecode/plate-indent": "npm:15.0.3"
+    "@udecode/plate-juice": "npm:15.0.3"
+    "@udecode/plate-kbd": "npm:15.0.3"
+    "@udecode/plate-link": "npm:15.0.3"
+    "@udecode/plate-list": "npm:15.0.3"
+    "@udecode/plate-media-embed": "npm:15.0.3"
+    "@udecode/plate-mention": "npm:15.0.3"
+    "@udecode/plate-node-id": "npm:15.0.3"
+    "@udecode/plate-normalizers": "npm:15.0.3"
+    "@udecode/plate-paragraph": "npm:15.0.3"
+    "@udecode/plate-reset-node": "npm:15.0.3"
+    "@udecode/plate-select": "npm:15.0.3"
+    "@udecode/plate-serializer-csv": "npm:15.0.3"
+    "@udecode/plate-serializer-docx": "npm:15.0.3"
+    "@udecode/plate-serializer-md": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-table": "npm:15.0.3"
+    "@udecode/plate-trailing-block": "npm:15.0.3"
+    "@udecode/plate-ui": "npm:15.0.3"
+    "@udecode/plate-ui-code-block": "npm:15.0.3"
+    "@udecode/plate-ui-dnd": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
+    papaparse: "npm:^5.3.2"
+    prismjs: "npm:^1.25.0"
+    react-dnd: "npm:>=14.0.0"
+    react-dnd-html5-backend: "npm:>=14.0.0"
+  peerDependencies:
+    "@types/papaparse": ^5
+    papaparse: ^5.3.2
+    prismjs: ^1.25.0
+    react: ">=16.8.0"
+    react-dnd: ">=14.0.0"
+    react-dnd-html5-backend: ">=14.0.0"
+    react-dom: ">=16.8.0"
+    slate: ">=0.66.1"
+    slate-history: ">=0.66.0"
+    slate-react: ">=0.74.2"
+  languageName: unknown
+  linkType: soft
+
+"@udecode/plate-kbd@npm:15.0.3, @udecode/plate-kbd@workspace:packages/nodes/kbd":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-kbd@workspace:packages/nodes/kbd"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5257,11 +5386,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-line-height@npm:15.0.0, @udecode/plate-line-height@workspace:packages/nodes/line-height":
+"@udecode/plate-line-height@npm:15.0.3, @udecode/plate-line-height@workspace:packages/nodes/line-height":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-line-height@workspace:packages/nodes/line-height"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5271,13 +5400,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-link@npm:15.0.1, @udecode/plate-link@workspace:packages/nodes/link":
+"@udecode/plate-link@npm:15.0.3":
+  version: 15.0.3
+  resolution: "@udecode/plate-link@npm:15.0.3"
+  dependencies:
+    "@udecode/plate-button": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-normalizers": "npm:15.0.3"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+    slate: ">=0.66.1"
+    slate-history: ">=0.66.0"
+    slate-react: ">=0.74.2"
+  checksum: 5664c2adc6b5044641cd7b1242744461b01ed093df2b0e44294e0484a12f2372797d0ab178d27ac80675b9d88a38745ae8b264ad6552c6a09256938da84b3f99
+  languageName: node
+  linkType: hard
+
+"@udecode/plate-link@npm:15.0.5, @udecode/plate-link@workspace:packages/nodes/link":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-link@workspace:packages/nodes/link"
   dependencies:
-    "@udecode/plate-button": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-normalizers": "npm:15.0.0"
+    "@udecode/plate-button": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-normalizers": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5287,12 +5433,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-list@npm:15.0.0, @udecode/plate-list@workspace:packages/nodes/list":
+"@udecode/plate-list@npm:15.0.3, @udecode/plate-list@workspace:packages/nodes/list":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-list@workspace:packages/nodes/list"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-reset-node": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-reset-node": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5302,11 +5448,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-media-embed@npm:15.0.0, @udecode/plate-media-embed@workspace:packages/nodes/media-embed":
+"@udecode/plate-media-embed@npm:15.0.3, @udecode/plate-media-embed@workspace:packages/nodes/media-embed":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-media-embed@workspace:packages/nodes/media-embed"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5316,12 +5462,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-mention@npm:15.0.0, @udecode/plate-mention@workspace:packages/nodes/mention":
+"@udecode/plate-mention@npm:15.0.3, @udecode/plate-mention@workspace:packages/nodes/mention":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-mention@workspace:packages/nodes/mention"
   dependencies:
-    "@udecode/plate-combobox": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-combobox": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5331,11 +5477,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-node-id@npm:15.0.0, @udecode/plate-node-id@workspace:packages/editor/node-id":
+"@udecode/plate-node-id@npm:15.0.3, @udecode/plate-node-id@workspace:packages/editor/node-id":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-node-id@workspace:packages/editor/node-id"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5345,11 +5491,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-normalizers@npm:15.0.0, @udecode/plate-normalizers@workspace:packages/editor/normalizers":
+"@udecode/plate-normalizers@npm:15.0.3, @udecode/plate-normalizers@workspace:packages/editor/normalizers":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-normalizers@workspace:packages/editor/normalizers"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5359,11 +5505,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-paragraph@npm:15.0.0, @udecode/plate-paragraph@workspace:packages/nodes/paragraph":
+"@udecode/plate-paragraph@npm:15.0.3, @udecode/plate-paragraph@workspace:packages/nodes/paragraph":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-paragraph@workspace:packages/nodes/paragraph"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5373,11 +5519,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-reset-node@npm:15.0.0, @udecode/plate-reset-node@workspace:packages/editor/reset-node":
+"@udecode/plate-reset-node@npm:15.0.3, @udecode/plate-reset-node@workspace:packages/editor/reset-node":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-reset-node@workspace:packages/editor/reset-node"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5387,11 +5533,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-select@npm:15.0.0, @udecode/plate-select@workspace:packages/editor/select":
+"@udecode/plate-select@npm:15.0.3, @udecode/plate-select@workspace:packages/editor/select":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-select@workspace:packages/editor/select"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5401,13 +5547,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-serializer-csv@npm:15.0.0, @udecode/plate-serializer-csv@workspace:packages/serializers/csv":
+"@udecode/plate-serializer-csv@npm:15.0.3, @udecode/plate-serializer-csv@workspace:packages/serializers/csv":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-serializer-csv@workspace:packages/serializers/csv"
   dependencies:
     "@types/papaparse": "npm:^5"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-table": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-table": "npm:15.0.3"
     papaparse: "npm:^5.3.2"
   peerDependencies:
     react: ">=16.8.0"
@@ -5418,17 +5564,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-serializer-docx@npm:15.0.0, @udecode/plate-serializer-docx@workspace:packages/serializers/docx":
+"@udecode/plate-serializer-docx@npm:15.0.3, @udecode/plate-serializer-docx@workspace:packages/serializers/docx":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-serializer-docx@workspace:packages/serializers/docx"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-heading": "npm:15.0.0"
-    "@udecode/plate-image": "npm:15.0.0"
-    "@udecode/plate-indent": "npm:15.0.0"
-    "@udecode/plate-indent-list": "npm:15.0.0"
-    "@udecode/plate-paragraph": "npm:15.0.0"
-    "@udecode/plate-table": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-heading": "npm:15.0.3"
+    "@udecode/plate-image": "npm:15.0.3"
+    "@udecode/plate-indent": "npm:15.0.3"
+    "@udecode/plate-indent-list": "npm:15.0.3"
+    "@udecode/plate-paragraph": "npm:15.0.3"
+    "@udecode/plate-table": "npm:15.0.3"
     validator: "npm:^13.7.0"
   peerDependencies:
     react: ">=16.8.0"
@@ -5440,12 +5586,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-serializer-html@npm:15.0.0, @udecode/plate-serializer-html@workspace:packages/serializers/html":
+"@udecode/plate-serializer-html@npm:15.0.3, @udecode/plate-serializer-html@workspace:packages/serializers/html":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-serializer-html@workspace:packages/serializers/html"
   dependencies:
     "@types/papaparse": "npm:^5"
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
     html-entities: "npm:^2.3.3"
   peerDependencies:
     react: ">=16.8.0"
@@ -5456,17 +5602,41 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-serializer-md@npm:15.0.1, @udecode/plate-serializer-md@workspace:packages/serializers/md":
+"@udecode/plate-serializer-md@npm:15.0.3":
+  version: 15.0.3
+  resolution: "@udecode/plate-serializer-md@npm:15.0.3"
+  dependencies:
+    "@udecode/plate-block-quote": "npm:15.0.3"
+    "@udecode/plate-code-block": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-heading": "npm:15.0.3"
+    "@udecode/plate-link": "npm:15.0.3"
+    "@udecode/plate-list": "npm:15.0.3"
+    "@udecode/plate-paragraph": "npm:15.0.3"
+    remark-parse: "npm:^9.0.0"
+    remark-slate: "npm:^1.8.6"
+    unified: "npm:^9.2.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+    slate: ">=0.66.1"
+    slate-history: ">=0.66.0"
+    slate-react: ">=0.74.2"
+  checksum: eb99daad0a8c30efc123aab6cc2f540b37c3636a76859ee31cb2e16942939e368d4c77415c317e3eff68656cef81777a44edbb71bc4e70235dd80633a77eb8cf
+  languageName: node
+  linkType: hard
+
+"@udecode/plate-serializer-md@npm:15.0.5, @udecode/plate-serializer-md@workspace:packages/serializers/md":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-serializer-md@workspace:packages/serializers/md"
   dependencies:
-    "@udecode/plate-block-quote": "npm:15.0.0"
-    "@udecode/plate-code-block": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-heading": "npm:15.0.0"
-    "@udecode/plate-link": "npm:15.0.1"
-    "@udecode/plate-list": "npm:15.0.0"
-    "@udecode/plate-paragraph": "npm:15.0.0"
+    "@udecode/plate-block-quote": "npm:15.0.3"
+    "@udecode/plate-code-block": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-heading": "npm:15.0.3"
+    "@udecode/plate-link": "npm:15.0.5"
+    "@udecode/plate-list": "npm:15.0.3"
+    "@udecode/plate-paragraph": "npm:15.0.3"
     remark-parse: "npm:^9.0.0"
     remark-slate: "npm:^1.8.6"
     unified: "npm:^9.2.1"
@@ -5479,11 +5649,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-styled-components@npm:15.0.0, @udecode/plate-styled-components@workspace:packages/ui/styled-components":
+"@udecode/plate-styled-components@npm:15.0.3, @udecode/plate-styled-components@workspace:packages/ui/styled-components":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-styled-components@workspace:packages/ui/styled-components"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
     clsx: "npm:^1.1.1"
     twin.macro: "npm:2.8.2"
   peerDependencies:
@@ -5497,11 +5667,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-table@npm:15.0.0, @udecode/plate-table@workspace:packages/nodes/table":
+"@udecode/plate-table@npm:15.0.3, @udecode/plate-table@workspace:packages/nodes/table":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-table@workspace:packages/nodes/table"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5520,11 +5690,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-trailing-block@npm:15.0.0, @udecode/plate-trailing-block@workspace:packages/editor/trailing-block":
+"@udecode/plate-trailing-block@npm:15.0.3, @udecode/plate-trailing-block@workspace:packages/editor/trailing-block":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-trailing-block@workspace:packages/editor/trailing-block"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5534,14 +5704,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-alignment@npm:15.0.0, @udecode/plate-ui-alignment@workspace:packages/ui/nodes/alignment":
+"@udecode/plate-ui-alignment@npm:15.0.3, @udecode/plate-ui-alignment@workspace:packages/ui/nodes/alignment":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-alignment@workspace:packages/ui/nodes/alignment"
   dependencies:
-    "@udecode/plate-alignment": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-alignment": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5552,13 +5722,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-block-quote@npm:15.0.0, @udecode/plate-ui-block-quote@workspace:packages/ui/nodes/block-quote":
+"@udecode/plate-ui-block-quote@npm:15.0.3, @udecode/plate-ui-block-quote@workspace:packages/ui/nodes/block-quote":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-block-quote@workspace:packages/ui/nodes/block-quote"
   dependencies:
-    "@udecode/plate-block-quote": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
+    "@udecode/plate-block-quote": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5569,13 +5739,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-button@npm:15.0.0, @udecode/plate-ui-button@workspace:packages/ui/button":
+"@udecode/plate-ui-button@npm:15.0.3, @udecode/plate-ui-button@workspace:packages/ui/button":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-button@workspace:packages/ui/button"
   dependencies:
-    "@udecode/plate-button": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
+    "@udecode/plate-button": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5586,14 +5756,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-code-block@npm:15.0.0, @udecode/plate-ui-code-block@workspace:packages/ui/nodes/code-block":
+"@udecode/plate-ui-code-block@npm:15.0.3, @udecode/plate-ui-code-block@workspace:packages/ui/nodes/code-block":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-code-block@workspace:packages/ui/nodes/code-block"
   dependencies:
-    "@udecode/plate-code-block": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-code-block": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5604,14 +5774,33 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-combobox@npm:15.0.0, @udecode/plate-ui-combobox@workspace:packages/ui/combobox":
+"@udecode/plate-ui-combobox@npm:15.0.3":
+  version: 15.0.3
+  resolution: "@udecode/plate-ui-combobox@npm:15.0.3"
+  dependencies:
+    "@udecode/plate-combobox": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-floating": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+    slate: ">=0.66.1"
+    slate-history: ">=0.66.0"
+    slate-react: ">=0.74.2"
+    styled-components: ">=5.0.0"
+  checksum: ab83dec842c3755b470493b1dac1ebfaf91234bc677a5c85ef2733ed3224e1a69c3a3618b53b568150c068fd8ee213c2c6030145f75ad7e2bd480301e329e9e7
+  languageName: node
+  linkType: hard
+
+"@udecode/plate-ui-combobox@npm:15.0.4, @udecode/plate-ui-combobox@workspace:packages/ui/combobox":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-combobox@workspace:packages/ui/combobox"
   dependencies:
-    "@udecode/plate-combobox": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-floating": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
+    "@udecode/plate-combobox": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-floating": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5622,12 +5811,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-cursor@npm:15.0.0, @udecode/plate-ui-cursor@workspace:packages/ui/cursor":
+"@udecode/plate-ui-cursor@npm:15.0.3, @udecode/plate-ui-cursor@workspace:packages/ui/cursor":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-cursor@workspace:packages/ui/cursor"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5638,14 +5827,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-dnd@npm:15.0.0, @udecode/plate-ui-dnd@workspace:packages/ui/dnd":
+"@udecode/plate-ui-dnd@npm:15.0.3, @udecode/plate-ui-dnd@workspace:packages/ui/dnd":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-dnd@workspace:packages/ui/dnd"
   dependencies:
     "@react-hook/merged-ref": "npm:^1.3.2"
     "@tippyjs/react": "npm:^4.2.6"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dnd: ">=14.0.0"
@@ -5663,8 +5852,8 @@ __metadata:
   resolution: "@udecode/plate-ui-excalidraw@workspace:packages/ui/nodes/excalidraw"
   dependencies:
     "@excalidraw/excalidraw-next": "npm:0.8.0-69b6fbb"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5675,14 +5864,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-find-replace@npm:15.0.0, @udecode/plate-ui-find-replace@workspace:packages/ui/find-replace":
+"@udecode/plate-ui-find-replace@npm:15.0.3, @udecode/plate-ui-find-replace@workspace:packages/ui/find-replace":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-find-replace@workspace:packages/ui/find-replace"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-find-replace": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-find-replace": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5693,15 +5882,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-font@npm:15.0.0, @udecode/plate-ui-font@workspace:packages/ui/nodes/font":
+"@udecode/plate-ui-font@npm:15.0.3, @udecode/plate-ui-font@workspace:packages/ui/nodes/font":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-font@workspace:packages/ui/nodes/font"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-font": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-button": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-font": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-button": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5716,9 +5905,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-horizontal-rule@workspace:packages/ui/nodes/horizontal-rule"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-horizontal-rule": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-horizontal-rule": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5728,14 +5917,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-image@npm:15.0.0, @udecode/plate-ui-image@workspace:packages/ui/nodes/image":
+"@udecode/plate-ui-image@npm:15.0.3, @udecode/plate-ui-image@workspace:packages/ui/nodes/image":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-image@workspace:packages/ui/nodes/image"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-image": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-image": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5746,14 +5935,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-line-height@npm:15.0.0, @udecode/plate-ui-line-height@workspace:packages/ui/nodes/line-height":
+"@udecode/plate-ui-line-height@npm:15.0.3, @udecode/plate-ui-line-height@workspace:packages/ui/nodes/line-height":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-line-height@workspace:packages/ui/nodes/line-height"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-line-height": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-line-height": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5764,15 +5953,35 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-link@npm:15.0.1, @udecode/plate-ui-link@workspace:packages/ui/nodes/link":
+"@udecode/plate-ui-link@npm:15.0.3":
+  version: 15.0.3
+  resolution: "@udecode/plate-ui-link@npm:15.0.3"
+  dependencies:
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-link": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-button": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+    slate: ">=0.66.1"
+    slate-history: ">=0.66.0"
+    slate-react: ">=0.74.2"
+    styled-components: ">=5.0.0"
+  checksum: 6a62fd5fb97576a0365cce9f5c3aff9e4867f2fb83e159ed4a415780b73f22d03dc3dfefe91debec04ccaa05032658a97eafe2880971526ef890e6fc547f31e9
+  languageName: node
+  linkType: hard
+
+"@udecode/plate-ui-link@npm:15.0.5, @udecode/plate-ui-link@workspace:packages/ui/nodes/link":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-link@workspace:packages/ui/nodes/link"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-link": "npm:15.0.1"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-button": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-link": "npm:15.0.5"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-button": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5783,14 +5992,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-list@npm:15.0.0, @udecode/plate-ui-list@workspace:packages/ui/nodes/list":
+"@udecode/plate-ui-list@npm:15.0.3, @udecode/plate-ui-list@workspace:packages/ui/nodes/list":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-list@workspace:packages/ui/nodes/list"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-list": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-list": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5801,14 +6010,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-media-embed@npm:15.0.0, @udecode/plate-ui-media-embed@workspace:packages/ui/nodes/media-embed":
+"@udecode/plate-ui-media-embed@npm:15.0.3, @udecode/plate-ui-media-embed@workspace:packages/ui/nodes/media-embed":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-media-embed@workspace:packages/ui/nodes/media-embed"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-media-embed": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-media-embed": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
     js-video-url-parser: "npm:0.5.1"
   peerDependencies:
     react: ">=16.8.0"
@@ -5820,15 +6029,35 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-mention@npm:15.0.0, @udecode/plate-ui-mention@workspace:packages/ui/nodes/mention":
+"@udecode/plate-ui-mention@npm:15.0.3":
+  version: 15.0.3
+  resolution: "@udecode/plate-ui-mention@npm:15.0.3"
+  dependencies:
+    "@udecode/plate-combobox": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-mention": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-combobox": "npm:15.0.3"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+    slate: ">=0.66.1"
+    slate-history: ">=0.66.0"
+    slate-react: ">=0.74.2"
+    styled-components: ">=5.0.0"
+  checksum: 93bc0d240d2ca4292fa29a7ea358fece1f9e8ff0c0ca30fcf8ed598473c589854bb733ca6724e9313a90afc14125895540602b74317d7cb6ba947ddefd6c58ee
+  languageName: node
+  linkType: hard
+
+"@udecode/plate-ui-mention@npm:15.0.4, @udecode/plate-ui-mention@workspace:packages/ui/nodes/mention":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-mention@workspace:packages/ui/nodes/mention"
   dependencies:
-    "@udecode/plate-combobox": "npm:15.0.0"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-mention": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-combobox": "npm:15.0.0"
+    "@udecode/plate-combobox": "npm:15.0.3"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-mention": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-combobox": "npm:15.0.4"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5839,12 +6068,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-placeholder@npm:15.0.0, @udecode/plate-ui-placeholder@workspace:packages/ui/placeholder":
+"@udecode/plate-ui-placeholder@npm:15.0.3, @udecode/plate-ui-placeholder@workspace:packages/ui/placeholder":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-placeholder@workspace:packages/ui/placeholder"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5855,13 +6084,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-popover@npm:15.0.0, @udecode/plate-ui-popover@workspace:packages/ui/popover":
+"@udecode/plate-ui-popover@npm:15.0.3, @udecode/plate-ui-popover@workspace:packages/ui/popover":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-popover@workspace:packages/ui/popover"
   dependencies:
     "@tippyjs/react": "npm:^4.2.6"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5876,7 +6105,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-popper@workspace:packages/ui/popper"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -5886,16 +6115,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-table@npm:15.0.0, @udecode/plate-ui-table@workspace:packages/ui/nodes/table":
+"@udecode/plate-ui-table@npm:15.0.3, @udecode/plate-ui-table@workspace:packages/ui/nodes/table":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-table@workspace:packages/ui/nodes/table"
   dependencies:
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-table": "npm:15.0.0"
-    "@udecode/plate-ui-button": "npm:15.0.0"
-    "@udecode/plate-ui-popover": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-table": "npm:15.0.3"
+    "@udecode/plate-ui-button": "npm:15.0.3"
+    "@udecode/plate-ui-popover": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
     re-resizable: "npm:^6.9.9"
   peerDependencies:
     react: ">=16.8.0"
@@ -5907,14 +6136,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui-toolbar@npm:15.0.0, @udecode/plate-ui-toolbar@workspace:packages/ui/toolbar":
+"@udecode/plate-ui-toolbar@npm:15.0.3, @udecode/plate-ui-toolbar@workspace:packages/ui/toolbar":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui-toolbar@workspace:packages/ui/toolbar"
   dependencies:
     "@tippyjs/react": "npm:^4.2.6"
-    "@udecode/plate-core": "npm:15.0.0"
-    "@udecode/plate-floating": "npm:15.0.0"
-    "@udecode/plate-styled-components": "npm:15.0.0"
+    "@udecode/plate-core": "npm:15.0.3"
+    "@udecode/plate-floating": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
     react-use: "npm:^17.3.2"
   peerDependencies:
     react: ">=16.8.0"
@@ -5926,31 +6155,70 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@udecode/plate-ui@npm:15.0.1, @udecode/plate-ui@workspace:packages/ui/plate":
+"@udecode/plate-ui@npm:15.0.3":
+  version: 15.0.3
+  resolution: "@udecode/plate-ui@npm:15.0.3"
+  dependencies:
+    "@udecode/plate-headless": "npm:15.0.3"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-alignment": "npm:15.0.3"
+    "@udecode/plate-ui-block-quote": "npm:15.0.3"
+    "@udecode/plate-ui-button": "npm:15.0.3"
+    "@udecode/plate-ui-code-block": "npm:15.0.3"
+    "@udecode/plate-ui-combobox": "npm:15.0.3"
+    "@udecode/plate-ui-cursor": "npm:15.0.3"
+    "@udecode/plate-ui-dnd": "npm:15.0.3"
+    "@udecode/plate-ui-find-replace": "npm:15.0.3"
+    "@udecode/plate-ui-font": "npm:15.0.3"
+    "@udecode/plate-ui-image": "npm:15.0.3"
+    "@udecode/plate-ui-line-height": "npm:15.0.3"
+    "@udecode/plate-ui-link": "npm:15.0.3"
+    "@udecode/plate-ui-list": "npm:15.0.3"
+    "@udecode/plate-ui-media-embed": "npm:15.0.3"
+    "@udecode/plate-ui-mention": "npm:15.0.3"
+    "@udecode/plate-ui-placeholder": "npm:15.0.3"
+    "@udecode/plate-ui-popover": "npm:15.0.3"
+    "@udecode/plate-ui-table": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dnd: ">=14.0.0"
+    react-dnd-html5-backend: ">=14.0.0"
+    react-dom: ">=16.8.0"
+    slate: ">=0.66.1"
+    slate-history: ">=0.66.0"
+    slate-hyperscript: ">=0.66.0"
+    slate-react: ">=0.74.2"
+    styled-components: ">=5.0.0"
+  checksum: 2221c7d6cb81fe961d70f10472081b187bed4a25a74c437a8871e13f4f4cb9a99cc6905cabe799b0db4e53c659d4043a46b5f5990a396c81760ffb981c98a9e0
+  languageName: node
+  linkType: hard
+
+"@udecode/plate-ui@npm:15.0.5, @udecode/plate-ui@workspace:packages/ui/plate":
   version: 0.0.0-use.local
   resolution: "@udecode/plate-ui@workspace:packages/ui/plate"
   dependencies:
-    "@udecode/plate-headless": "npm:15.0.1"
-    "@udecode/plate-styled-components": "npm:15.0.0"
-    "@udecode/plate-ui-alignment": "npm:15.0.0"
-    "@udecode/plate-ui-block-quote": "npm:15.0.0"
-    "@udecode/plate-ui-button": "npm:15.0.0"
-    "@udecode/plate-ui-code-block": "npm:15.0.0"
-    "@udecode/plate-ui-combobox": "npm:15.0.0"
-    "@udecode/plate-ui-cursor": "npm:15.0.0"
-    "@udecode/plate-ui-dnd": "npm:15.0.0"
-    "@udecode/plate-ui-find-replace": "npm:15.0.0"
-    "@udecode/plate-ui-font": "npm:15.0.0"
-    "@udecode/plate-ui-image": "npm:15.0.0"
-    "@udecode/plate-ui-line-height": "npm:15.0.0"
-    "@udecode/plate-ui-link": "npm:15.0.1"
-    "@udecode/plate-ui-list": "npm:15.0.0"
-    "@udecode/plate-ui-media-embed": "npm:15.0.0"
-    "@udecode/plate-ui-mention": "npm:15.0.0"
-    "@udecode/plate-ui-placeholder": "npm:15.0.0"
-    "@udecode/plate-ui-popover": "npm:15.0.0"
-    "@udecode/plate-ui-table": "npm:15.0.0"
-    "@udecode/plate-ui-toolbar": "npm:15.0.0"
+    "@udecode/plate-headless": "npm:15.0.5"
+    "@udecode/plate-styled-components": "npm:15.0.3"
+    "@udecode/plate-ui-alignment": "npm:15.0.3"
+    "@udecode/plate-ui-block-quote": "npm:15.0.3"
+    "@udecode/plate-ui-button": "npm:15.0.3"
+    "@udecode/plate-ui-code-block": "npm:15.0.3"
+    "@udecode/plate-ui-combobox": "npm:15.0.4"
+    "@udecode/plate-ui-cursor": "npm:15.0.3"
+    "@udecode/plate-ui-dnd": "npm:15.0.3"
+    "@udecode/plate-ui-find-replace": "npm:15.0.3"
+    "@udecode/plate-ui-font": "npm:15.0.3"
+    "@udecode/plate-ui-image": "npm:15.0.3"
+    "@udecode/plate-ui-line-height": "npm:15.0.3"
+    "@udecode/plate-ui-link": "npm:15.0.5"
+    "@udecode/plate-ui-list": "npm:15.0.3"
+    "@udecode/plate-ui-media-embed": "npm:15.0.3"
+    "@udecode/plate-ui-mention": "npm:15.0.4"
+    "@udecode/plate-ui-placeholder": "npm:15.0.3"
+    "@udecode/plate-ui-popover": "npm:15.0.3"
+    "@udecode/plate-ui-table": "npm:15.0.3"
+    "@udecode/plate-ui-toolbar": "npm:15.0.3"
   peerDependencies:
     react: ">=16.8.0"
     react-dnd: ">=14.0.0"
@@ -5968,8 +6236,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@udecode/plate@workspace:packages/plate"
   dependencies:
-    "@udecode/plate-headless": "npm:15.0.1"
-    "@udecode/plate-ui": "npm:15.0.1"
+    "@udecode/plate-headless": "npm:15.0.5"
+    "@udecode/plate-ui": "npm:15.0.5"
   peerDependencies:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
@@ -10096,6 +10364,17 @@ __metadata:
     "@react-dnd/invariant": "npm:3.0.1"
     redux: "npm:^4.1.2"
   checksum: 59a94a035e5dcc72d45867177ed502b439efa5ae7e8225e145bebad01c67b1a192ac25ace13bec00525cc4e505f146242fffb57183e24af45df4cc8d2e277e88
+  languageName: node
+  linkType: hard
+
+"dnd-core@npm:^16.0.1":
+  version: 16.0.1
+  resolution: "dnd-core@npm:16.0.1"
+  dependencies:
+    "@react-dnd/asap": "npm:^5.0.1"
+    "@react-dnd/invariant": "npm:^4.0.1"
+    redux: "npm:^4.2.0"
+  checksum: 9d9fdeb65e70f644d9b941b2fa28c78e86a1ec574a7048186a50f4f62b838e1bbf5188700452eb85ed5ab4be12b26209dc5c7dde9a9226cbd079bc67360eb896
   languageName: node
   linkType: hard
 
@@ -19940,6 +20219,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-dnd-html5-backend@npm:>=14.0.0":
+  version: 16.0.1
+  resolution: "react-dnd-html5-backend@npm:16.0.1"
+  dependencies:
+    dnd-core: "npm:^16.0.1"
+  checksum: 03286ab7d67799264ded9014919972474a1249809e47bdb95ef91c594e85ea98f750b7fc2844758145fc50d5061a9ef4a2fc9bf7e7f4a0af6162743758ed4a73
+  languageName: node
+  linkType: hard
+
 "react-dnd-html5-backend@npm:^15.1.3":
   version: 15.1.3
   resolution: "react-dnd-html5-backend@npm:15.1.3"
@@ -19955,6 +20243,31 @@ __metadata:
   dependencies:
     dnd-core: "npm:15.1.2"
   checksum: d1b02395cde110438e9e4537b0bd9adbfd921ed2ff79919ceaefed9c145fc57502f1336ea62949ca4254f7481a7a2d69a2574cc90a60624c4cc508c4fdac79f5
+  languageName: node
+  linkType: hard
+
+"react-dnd@npm:>=14.0.0":
+  version: 16.0.1
+  resolution: "react-dnd@npm:16.0.1"
+  dependencies:
+    "@react-dnd/invariant": "npm:^4.0.1"
+    "@react-dnd/shallowequal": "npm:^4.0.1"
+    dnd-core: "npm:^16.0.1"
+    fast-deep-equal: "npm:^3.1.3"
+    hoist-non-react-statics: "npm:^3.3.2"
+  peerDependencies:
+    "@types/hoist-non-react-statics": ">= 3.3.1"
+    "@types/node": ">= 12"
+    "@types/react": ">= 16"
+    react: ">= 16.14"
+  peerDependenciesMeta:
+    "@types/hoist-non-react-statics":
+      optional: true
+    "@types/node":
+      optional: true
+    "@types/react":
+      optional: true
+  checksum: 371835b01d0e6e9163bf0cea0ebc43ab09a6b492b2e4c98ec48169aa09d5569fcd29c5030aa7a06e73ecd70a5bdeb9dcfdc38966b89dfe0cb5beb7f5b79d9a8d
   languageName: node
   linkType: hard
 
@@ -20494,7 +20807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"redux@npm:^4.1.2":
+"redux@npm:^4.1.2, redux@npm:^4.2.0":
   version: 4.2.0
   resolution: "redux@npm:4.2.0"
   dependencies:
