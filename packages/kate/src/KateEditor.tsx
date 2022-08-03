@@ -50,7 +50,7 @@ import { alignPlugin } from './plugins/alignPlugin';
 import { resetBlockTypePlugin } from './plugins/resetBlockTypePlugin';
 import { softBreakPlugin } from './plugins/softBreakPlugin';
 import { exitBreakPlugin } from './plugins/exitBreakPlugin';
-import { forcedLayoutPlugin } from './plugins/forcedLayoutPlugin';
+// import { forcedLayoutPlugin } from './plugins/forcedLayoutPlugin';
 import { trailingBlockPlugin } from './plugins/trailingBlockPlugin';
 import { selectOnBackspacePlugin } from './plugins/selectOnBackspacePlugin';
 import { ToolbarButtons } from './ToolbarButtons';
@@ -78,12 +78,13 @@ const mentions = [
     { key: "0", text: "Obi-wan Henobi" }
 ]
 
-function Any4mEditor() {
+function KateEditor() {
 
     const [formKeys, setFormKeys] = useState<string[]>([]);
 
     useEffect(() => {
         (async () => {
+            console.log("KateEditor started");
             // const keys = await getProps("81333cbf-cbd6-4904-8c89-dfcdf1679d02");
             // setFormKeys(keys);
             // debugger
@@ -127,7 +128,7 @@ function Any4mEditor() {
         createResetNodePlugin(resetBlockTypePlugin),
         createSoftBreakPlugin(softBreakPlugin),
         createExitBreakPlugin(exitBreakPlugin),
-        createNormalizeTypesPlugin(forcedLayoutPlugin),
+        // createNormalizeTypesPlugin(forcedLayoutPlugin),
         createTrailingBlockPlugin(trailingBlockPlugin),
         createSelectOnBackspacePlugin(selectOnBackspacePlugin),
         createComboboxPlugin(),
@@ -160,12 +161,12 @@ function Any4mEditor() {
     const [value, setValue] = useState<any>();
     const [html, setHtml] = useState<any>();
 
-    if (formKeys.length == 0)
-        return null;
+    // if (formKeys.length == 0)
+    //     return null;
 
     return (
         <div className="App">
-            <div style={{ width: "50%", float: "left" }}>
+            <div>
                 <DndProvider backend={HTML5Backend}>
                     <Toolbar>
                         <ToolbarButtons />
@@ -178,24 +179,24 @@ function Any4mEditor() {
 
                             <MarkBalloonToolbar />
                             {/* pluginKey has to be the same as the key in plugin above */}
-                            <MentionCombobox
+                            {/* <MentionCombobox
                                 prefixClassNames='blah-blah' key={"{"} trigger={"{"} pluginKey={"{"} items={formKeys.map(x => ({
                                     key: x,
                                     text: x
-                                }))} />
+                                }))} /> */}
                             <CursorOverlayContainer containerRef={containerRef} />
                         </Plate>
                     </div>
                 </DndProvider>
             </div>
-            <div style={{ boxSizing: "border-box", width: "50%", float: "left", borderLeft: "1px solid #ccc" }}>
+            {/* <div style={{ boxSizing: "border-box", width: "50%", float: "left", borderLeft: "1px solid #ccc" }}>
                 <pre>
                     {JSON.stringify(value, null, 2)}
                 </pre>
-            </div>
+            </div> */}
         </div>
     );
 }
 export {
-    Any4mEditor
+    KateEditor
 } 
