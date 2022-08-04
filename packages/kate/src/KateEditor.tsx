@@ -1,6 +1,7 @@
 import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+// import { SaveCancelButtons } from './SaveCancelButtons';
 
 // import './Any4mRichText.css';
 // import 'tippy.js/dist/tippy.css'
@@ -59,10 +60,11 @@ import { withStyledDraggables } from './plugins/withStyledDraggables';
 import { dragOverCursorPlugin } from './plugins/dragOverCursorPlugin';
 import { CursorOverlayContainer } from './plugins/CursorOverlayContainer';
 
-const editableProps: TEditableProps<MyValue> = {
-    placeholder: 'Type...',
-    spellCheck: false
-};
+const createEditableProps = (readOnly:boolean) => ({
+    placeholder: 'Type222...',
+    spellCheck: false,
+    readOnly: readOnly
+}) as TEditableProps<MyValue>;
 
 let components = createPlateUI({
     [ELEMENT_CODE_BLOCK]: StyledElement,
@@ -78,7 +80,14 @@ const mentions = [
     { key: "0", text: "Obi-wan Henobi" }
 ]
 
-function KateEditor() {
+type KateEditorProps = {
+    value: any;
+    onChange: any;
+    onClick: any;
+    readOnly: boolean;
+}
+
+function KateEditor(props:KateEditorProps) {
 
     const [formKeys, setFormKeys] = useState<string[]>([]);
 
@@ -158,7 +167,18 @@ function KateEditor() {
     }), []);
     const containerRef = useRef(null);
 
-    const [value, setValue] = useState<any>();
+    const [editableProps, setEditableProps] = useState<any>(createEditableProps(props.readOnly));
+
+    console.log("editableProps", editableProps);
+    if (editableProps.readOnly === true && props.readOnly === false) {
+        console.log("change1", props.readOnly);
+        setEditableProps(createEditableProps(props.readOnly));
+    } else if (editableProps.readOnly === false && props.readOnly === true) {
+        console.log("change2", props.readOnly);
+        setEditableProps(createEditableProps(props.readOnly));
+    }
+
+    const [value, setValue] = useState<any>(props.value);
     const [html, setHtml] = useState<any>();
 
     // if (formKeys.length == 0)
@@ -166,14 +186,19 @@ function KateEditor() {
 
     return (
         <div className="App">
-            <div>
+            <div className={props.readOnly ? "KateEditorReadOnly" : "KateEditor"} onClick={() => props.onClick && props.onClick(value)}>
                 <DndProvider backend={HTML5Backend}>
-                    <Toolbar>
-                        <ToolbarButtons />
-                    </Toolbar>
+                    {props.readOnly ? null : 
+                        <Toolbar>
+                            <ToolbarButtons />
+                        </Toolbar>
+                    }
                     <div ref={containerRef} style={styles.container}>
-                        <Plate<MyValue, MyEditor> onChange={(value) => {
+                        <Plate<MyValue, MyEditor>  value={value} onChange={(value) => {
                             setValue(value);
+                            if (props.onChange) {
+                                props.onChange(value);
+                            }
                             // setHtml()
                         }} plugins={plugins} editableProps={editableProps}>
 
@@ -186,6 +211,7 @@ function KateEditor() {
                                 }))} /> */}
                             <CursorOverlayContainer containerRef={containerRef} />
                         </Plate>
+                        {/* <SaveCancelButtons/> */}
                     </div>
                 </DndProvider>
             </div>
