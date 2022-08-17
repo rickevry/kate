@@ -60,8 +60,8 @@ import { withStyledDraggables } from './plugins/withStyledDraggables';
 import { dragOverCursorPlugin } from './plugins/dragOverCursorPlugin';
 import { CursorOverlayContainer } from './plugins/CursorOverlayContainer';
 
-const createEditableProps = (readOnly:boolean) => ({
-    placeholder: 'Type222...',
+const createEditableProps = (readOnly:boolean, placeholder:string) => ({
+    placeholder: placeholder ?? "Type here ...",
     spellCheck: false,
     readOnly: readOnly
 }) as TEditableProps<MyValue>;
@@ -85,6 +85,7 @@ type KateEditorProps = {
     onChange: any;
     onClick: any;
     readOnly: boolean;
+    placeholder: string;
 }
 
 function KateEditor(props:KateEditorProps) {
@@ -167,15 +168,15 @@ function KateEditor(props:KateEditorProps) {
     }), []);
     const containerRef = useRef(null);
 
-    const [editableProps, setEditableProps] = useState<any>(createEditableProps(props.readOnly));
+    const [editableProps, setEditableProps] = useState<any>(createEditableProps(props.readOnly, props.placeholder));
 
     console.log("editableProps", editableProps);
     if (editableProps.readOnly === true && props.readOnly === false) {
         console.log("change1", props.readOnly);
-        setEditableProps(createEditableProps(props.readOnly));
+        setEditableProps(createEditableProps(props.readOnly, props.placeholder));
     } else if (editableProps.readOnly === false && props.readOnly === true) {
         console.log("change2", props.readOnly);
-        setEditableProps(createEditableProps(props.readOnly));
+        setEditableProps(createEditableProps(props.readOnly, props.placeholder));
     }
 
     const [value, setValue] = useState<any>(props.value);
