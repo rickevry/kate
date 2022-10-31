@@ -21,14 +21,14 @@ import {
   } from '@udecode/plate-reset-node';
 
 
-  import { MyPlatePlugin } from '../plateTypes';
+  import { KatePlatePlugin } from '../plateTypes';
   
   const resetBlockTypesCommonRule = {
     types: [ELEMENT_BLOCKQUOTE, ELEMENT_TODO_LI],
     defaultType: ELEMENT_PARAGRAPH,
   };
   
-  export const resetBlockTypePlugin: Partial<MyPlatePlugin<ResetNodePlugin>> = {
+  export const resetBlockTypePlugin: Partial<KatePlatePlugin<ResetNodePlugin>> = {
     options: {
       rules: [
         {

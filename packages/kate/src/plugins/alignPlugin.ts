@@ -12,9 +12,9 @@ import {
     ELEMENT_H6,
 } from '@udecode/plate-heading';
 
-import { MyPlatePlugin } from '../plateTypes';
+import { KatePlatePlugin } from '../plateTypes';
 
-export const alignPlugin: Partial<MyPlatePlugin> = {
+export const alignPlugin: Partial<KatePlatePlugin> = {
     inject: {
         props: {
             validTypes: [

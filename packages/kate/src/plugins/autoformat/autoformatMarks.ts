@@ -7,14 +7,10 @@ import {
   MARK_SUPERSCRIPT,
   MARK_UNDERLINE,
 } from '@udecode/plate-basic-marks';
+import { MARK_HIGHLIGHT } from '@udecode/plate-highlight';
+import { KateAutoformatRule } from '../../plateTypes';
 
-import {
-  MARK_HIGHLIGHT,
-} from '@udecode/plate-highlight';
-
-import { MyAutoformatRule } from '../../plateTypes';
-
-export const autoformatMarks: MyAutoformatRule[] = [
+export const autoformatMarks: KateAutoformatRule[] = [
   {
     mode: 'mark',
     type: [MARK_BOLD, MARK_ITALIC],

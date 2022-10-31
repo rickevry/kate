@@ -1,8 +1,4 @@
-import {
-  isBlock,
-  setNodes,
-} from '@udecode/plate-core';
-
+import { isBlock, setNodes } from '@udecode/plate-core';
 import {
   ELEMENT_LI,
   ELEMENT_OL,
@@ -10,12 +6,10 @@ import {
   ELEMENT_UL,
   TTodoListItemElement,
 } from '@udecode/plate-list';
-
-
-import { MyAutoformatRule } from '../../plateTypes';
+import { KateAutoformatRule } from '../../plateTypes';
 import { formatList, preFormat } from './autoformatUtils';
 
-export const autoformatLists: MyAutoformatRule[] = [
+export const autoformatLists: KateAutoformatRule[] = [
   {
     mode: 'block',
     type: ELEMENT_LI,

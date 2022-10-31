@@ -1,6 +1,8 @@
 import React from 'react';
 import { DragIndicator } from '@styled-icons/material/DragIndicator';
 import Tippy, { TippyProps } from '@tippyjs/react';
+import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote';
+import { ELEMENT_CODE_BLOCK } from '@udecode/plate-code-block';
 import {
   ELEMENT_H1,
   ELEMENT_H2,
@@ -9,45 +11,12 @@ import {
   ELEMENT_H5,
   ELEMENT_H6,
 } from '@udecode/plate-heading';
-
-import {
-  ELEMENT_BLOCKQUOTE,
-} from '@udecode/plate-block-quote';
-
-import {
-  ELEMENT_CODE_BLOCK,
-} from '@udecode/plate-code-block';
-
-
-import {
-  ELEMENT_IMAGE,
-} from '@udecode/plate-image';
-
-
-import {
-  ELEMENT_PARAGRAPH,
-} from '@udecode/plate-paragraph';
-
-
-import {
-  ELEMENT_TABLE,
-} from '@udecode/plate-table';
-
-import {
-  ELEMENT_OL,
-  ELEMENT_TODO_LI,
-  ELEMENT_UL,
-} from '@udecode/plate-list';
-
-
-import {
-  ELEMENT_MEDIA_EMBED,
-} from '@udecode/plate-media-embed';
-
-
-import {
-  withDraggables,
-} from '@udecode/plate-ui-dnd';
+import { ELEMENT_IMAGE } from '@udecode/plate-image';
+import { ELEMENT_OL, ELEMENT_TODO_LI, ELEMENT_UL } from '@udecode/plate-list';
+import { ELEMENT_MEDIA_EMBED } from '@udecode/plate-media-embed';
+import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph';
+import { ELEMENT_TABLE } from '@udecode/plate-table';
+import { withDraggables } from '@udecode/plate-ui-dnd';
 
 const styles = {
   grabber: { fontSize: 12 },
@@ -78,7 +47,7 @@ export const grabberTooltipProps: TippyProps = {
   theme: 'small',
 };
 
-export const withStyledDraggables = (components: any) => {
+export const withStyledDraggables = (components: any, ui: any) => {
   return withDraggables(components, [
     {
       keys: [ELEMENT_PARAGRAPH, ELEMENT_UL, ELEMENT_OL],
@@ -113,54 +82,6 @@ export const withStyledDraggables = (components: any) => {
       },
     },
     {
-      key: ELEMENT_H1,
-      styles: {
-        gutterLeft: {
-          padding: '2em 0 4px',
-          fontSize: '1.875em',
-        },
-        blockToolbarWrapper: {
-          height: '1.3em',
-        },
-      },
-    },
-    {
-      key: ELEMENT_H2,
-      styles: {
-        gutterLeft: {
-          padding: '1.4em 0 1px',
-          fontSize: '1.5em',
-        },
-        blockToolbarWrapper: {
-          height: '1.3em',
-        },
-      },
-    },
-    {
-      key: ELEMENT_H3,
-      styles: {
-        gutterLeft: {
-          padding: '1em 0 1px',
-          fontSize: '1.25em',
-        },
-        blockToolbarWrapper: {
-          height: '1.3em',
-        },
-      },
-    },
-    {
-      keys: [ELEMENT_H4, ELEMENT_H5, ELEMENT_H6],
-      styles: {
-        gutterLeft: {
-          padding: '0.75em 0 0',
-          fontSize: '1.1em',
-        },
-        blockToolbarWrapper: {
-          height: '1.3em',
-        },
-      },
-    },
-    {
       keys: [ELEMENT_PARAGRAPH, ELEMENT_UL, ELEMENT_OL],
       styles: {
         gutterLeft: {
@@ -184,5 +105,6 @@ export const withStyledDraggables = (components: any) => {
         },
       },
     },
+    ...ui
   ]);
 };

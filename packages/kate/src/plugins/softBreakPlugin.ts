@@ -18,9 +18,9 @@ import {
 
   
 
-  import { MyPlatePlugin } from '../plateTypes';
+  import { KatePlatePlugin } from '../plateTypes';
   
-  export const softBreakPlugin: Partial<MyPlatePlugin<SoftBreakPlugin>> = {
+  export const softBreakPlugin: Partial<KatePlatePlugin<SoftBreakPlugin>> = {
     options: {
       rules: [
         { hotkey: 'shift+enter' },

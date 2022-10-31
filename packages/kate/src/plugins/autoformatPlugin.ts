@@ -1,10 +1,10 @@
 
 import { AutoformatPlugin } from '@udecode/plate-autoformat';
-import { MyEditor, MyPlatePlugin, MyValue } from '../plateTypes';
+import { KateEditor, KatePlatePlugin, KateValue } from '../plateTypes';
 import { autoformatRules } from './autoformat/autoformatRules';
 
 export const autoformatPlugin: Partial<
-  MyPlatePlugin<AutoformatPlugin<MyValue, MyEditor>>
+  KatePlatePlugin<AutoformatPlugin<KateValue, KateEditor>>
 > = {
   options: {
     rules: autoformatRules as any,

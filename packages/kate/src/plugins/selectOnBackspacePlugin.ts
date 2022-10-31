@@ -12,10 +12,10 @@ import {
 
   
 
-  import { MyPlatePlugin } from '../plateTypes';
+  import { KatePlatePlugin } from '../plateTypes';
   
   export const selectOnBackspacePlugin: Partial<
-    MyPlatePlugin<SelectOnBackspacePlugin>
+    KatePlatePlugin<SelectOnBackspacePlugin>
   > = {
     options: {
       query: {

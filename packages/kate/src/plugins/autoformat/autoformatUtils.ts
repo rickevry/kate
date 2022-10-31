@@ -1,32 +1,17 @@
-import {
-  getParentNode,
-  isElement,
-  isType,
-} from '@udecode/plate-core';
-
-import {
-  AutoformatBlockRule,
-} from '@udecode/plate-autoformat';
-
-
-import {
-  toggleList,
-  unwrapList,
-} from '@udecode/plate-list';
-
+import { AutoformatBlockRule } from '@udecode/plate-autoformat';
 import {
   ELEMENT_CODE_BLOCK,
   ELEMENT_CODE_LINE,
 } from '@udecode/plate-code-block';
+import { getParentNode, isElement, isType } from '@udecode/plate-core';
+import { toggleList, unwrapList } from '@udecode/plate-list';
+import { KateEditor, KateValue } from '../../plateTypes';
 
-
-import { MyEditor, MyValue } from '../../plateTypes';
-
-export const preFormat: AutoformatBlockRule<MyValue, MyEditor>['preFormat'] = (
+export const preFormat: AutoformatBlockRule<KateValue, KateEditor>['preFormat'] = (
   editor
 ) => unwrapList(editor);
 
-export const format = (editor: MyEditor, customFormatting: any) => {
+export const format = (editor: KateEditor, customFormatting: any) => {
   if (editor.selection) {
     const parentEntry = getParentNode(editor, editor.selection);
     if (!parentEntry) return;
@@ -41,7 +26,7 @@ export const format = (editor: MyEditor, customFormatting: any) => {
   }
 };
 
-export const formatList = (editor: MyEditor, elementType: string) => {
+export const formatList = (editor: KateEditor, elementType: string) => {
   format(editor, () =>
     toggleList(editor, {
       type: elementType,
@@ -49,6 +34,6 @@ export const formatList = (editor: MyEditor, elementType: string) => {
   );
 };
 
-export const formatText = (editor: MyEditor, text: string) => {
+export const formatText = (editor: KateEditor, text: string) => {
   format(editor, () => editor.insertText(text));
 };

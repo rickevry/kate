@@ -1,8 +1,8 @@
 import { ExitBreakPlugin} from '@udecode/plate-break';
 import { KEYS_HEADING } from '@udecode/plate-heading';
-import { MyPlatePlugin } from '../plateTypes';
+import { KatePlatePlugin } from '../plateTypes';
 
-export const exitBreakPlugin: Partial<MyPlatePlugin<ExitBreakPlugin>> = {
+export const exitBreakPlugin: Partial<KatePlatePlugin<ExitBreakPlugin>> = {
   options: {
     rules: [
       {

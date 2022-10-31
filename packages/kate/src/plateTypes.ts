@@ -1,131 +1,84 @@
+import { AutoformatRule } from '@udecode/plate-autoformat';
+import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote';
 import {
-    ELEMENT_BLOCKQUOTE,
-    }
-    from '@udecode/plate-block-quote';
-
+  ELEMENT_CODE_BLOCK,
+  ELEMENT_CODE_LINE,
+} from '@udecode/plate-code-block';
 import {
-    ELEMENT_IMAGE,
-    }
-    from '@udecode/plate-image';
-
-    
-import {
-    TLinkElement,
-    ELEMENT_LINK,
-    }
-    from '@udecode/plate-link';
-
-    
-import {
-    ELEMENT_HR,
-    }
-    from '@udecode/plate-horizontal-rule';
-
-import {
-    AutoformatRule,
-    }
-    from '@udecode/plate-autoformat';
-
-import {
-    TMediaEmbedElement,
-    ELEMENT_MEDIA_EMBED,
-    }
-    from '@udecode/plate-media-embed';
-
-import {
-    ELEMENT_PARAGRAPH,
-    }
-    from '@udecode/plate-paragraph';
-
-import {
-    TMentionElement,
-    TMentionInputElement,
-    ELEMENT_MENTION,
-    ELEMENT_MENTION_INPUT,
-    }
-    from '@udecode/plate-mention';
-    
-import {
-ELEMENT_CODE_BLOCK,
-ELEMENT_CODE_LINE,
-}
-from '@udecode/plate-code-block';
-
-import {
-
-    TImageElement,
-}
-from '@udecode/plate-image';
-
-import {
-    ELEMENT_H1,
-ELEMENT_H2,
-ELEMENT_H3 }
-from '@udecode/plate-heading';
-
-import {
-TTableElement,
-ELEMENT_TABLE,
-ELEMENT_TD,
-ELEMENT_TR }
-from '@udecode/plate-table';
-
-import {
-ELEMENT_LI,
-ELEMENT_OL,
-ELEMENT_TODO_LI,
-ELEMENT_UL,
-TTodoListItemElement,
-} from '@udecode/plate-list';
-
-import {
-    createPlateEditor,
-    CreatePlateEditorOptions,
-    createPluginFactory,
-    createPlugins,
-    createTEditor,
-    Decorate,
-    DecorateEntry,
-    DOMHandler,
-    EDescendant,
-    EElement,
-    EElementEntry,
-    EElementOrText,
-    EMarks,
-    ENode,
-    ENodeEntry,
-    EText,
-    ETextEntry,
-    getPlateActions,
-    getPlateEditorRef,
-    getPlateSelectors,
-    getTEditor,
-    InjectComponent,
-    InjectProps,
-    KeyboardHandler,
-    NoInfer,
-    OnChange,
-    OverrideByKey,
-    PlateEditor,
-    PlatePlugin,
-    PlatePluginComponent,
-    PlatePluginInsertData,
-    PlatePluginProps,
-    PlateProps,
-    PluginOptions,
-    SerializeHtml,
-    TElement,
-    TNodeEntry,
-    TReactEditor,
-    TText,
-    useEditorRef,
-    useEditorState,
-    usePlateEditorRef,
-    usePlateEditorState,
-    usePlateSelectors,
-    WithOverride,
+  createPlateEditor,
+  CreatePlateEditorOptions,
+  createPluginFactory,
+  createPlugins,
+  createTEditor,
+  Decorate,
+  DecorateEntry,
+  DOMHandler,
+  EDescendant,
+  EElement,
+  EElementEntry,
+  EElementOrText,
+  EMarks,
+  ENode,
+  ENodeEntry,
+  EText,
+  ETextEntry,
+  getPlateActions,
+  getPlateEditorRef,
+  getPlateSelectors,
+  getTEditor,
+  InjectComponent,
+  InjectProps,
+  KeyboardHandler,
+  NoInfer,
+  OnChange,
+  OverrideByKey,
+  PlateEditor,
+  PlatePlugin,
+  PlatePluginComponent,
+  PlatePluginInsertData,
+  PlatePluginProps,
+  PlateProps,
+  PluginOptions,
+  SerializeHtml,
+  TElement,
+  TNodeEntry,
+  TReactEditor,
+  TText,
+  useEditorRef,
+  useEditorState,
+  usePlateEditorRef,
+  usePlateEditorState,
+  usePlateSelectors,
+  WithOverride,
 } from '@udecode/plate-core';
-
+import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3 } from '@udecode/plate-heading';
+import { ELEMENT_HR } from '@udecode/plate-horizontal-rule';
+import { ELEMENT_IMAGE, TImageElement } from '@udecode/plate-image';
+import { ELEMENT_LINK, TLinkElement } from '@udecode/plate-link';
+import {
+  ELEMENT_LI,
+  ELEMENT_OL,
+  ELEMENT_TODO_LI,
+  ELEMENT_UL,
+  TTodoListItemElement,
+} from '@udecode/plate-list';
+import {
+  ELEMENT_MEDIA_EMBED,
+  TMediaEmbedElement,
+} from '@udecode/plate-media-embed';
+import {
+  ELEMENT_MENTION,
+  ELEMENT_MENTION_INPUT,
+  TMentionElement,
+  TMentionInputElement,
+} from '@udecode/plate-mention';
+import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph';
+import {
+  ELEMENT_TABLE,
+  ELEMENT_TD,
+  ELEMENT_TR,
+  TTableElement,
+} from '@udecode/plate-table';
 import { CSSProperties } from 'styled-components';
 
 /**
@@ -133,290 +86,294 @@ import { CSSProperties } from 'styled-components';
  */
 
 export type EmptyText = {
-    text: '';
+  text: '';
 };
 
 export type PlainText = {
-    text: string;
+  text: string;
 };
 
 export interface RichText extends TText {
-    bold?: boolean;
-    italic?: boolean;
-    underline?: boolean;
-    strikethrough?: boolean;
-    code?: boolean;
-    kbd?: boolean;
-    subscript?: boolean;
-    backgroundColor?: CSSProperties['backgroundColor'];
-    fontFamily?: CSSProperties['fontFamily'];
-    color?: CSSProperties['color'];
-    fontSize?: CSSProperties['fontSize'];
-    fontWeight?: CSSProperties['fontWeight'];
+  bold?: boolean;
+  italic?: boolean;
+  underline?: boolean;
+  strikethrough?: boolean;
+  code?: boolean;
+  kbd?: boolean;
+  subscript?: boolean;
+  backgroundColor?: CSSProperties['backgroundColor'];
+  fontFamily?: CSSProperties['fontFamily'];
+  color?: CSSProperties['color'];
+  fontSize?: CSSProperties['fontSize'];
+  fontWeight?: CSSProperties['fontWeight'];
 }
 
 /**
  * Inline Elements
  */
 
-export interface MyLinkElement extends TLinkElement {
-    type: typeof ELEMENT_LINK;
-    children: RichText[];
+export interface KateLinkElement extends TLinkElement {
+  type: typeof ELEMENT_LINK;
+  children: RichText[];
 }
 
-export interface MyMentionInputElement extends TMentionInputElement {
-    type: typeof ELEMENT_MENTION_INPUT;
-    children: [PlainText];
+export interface KateMentionInputElement extends TMentionInputElement {
+  type: typeof ELEMENT_MENTION_INPUT;
+  children: [PlainText];
 }
 
-export interface MyMentionElement extends TMentionElement {
-    type: typeof ELEMENT_MENTION;
-    children: [EmptyText];
+export interface KateMentionElement extends TMentionElement {
+  type: typeof ELEMENT_MENTION;
+  children: [EmptyText];
 }
 
-export type MyInlineElement =
-    | MyLinkElement
-    | MyMentionElement
-    | MyMentionInputElement;
-export type MyInlineDescendant = MyInlineElement | RichText;
-export type MyInlineChildren = MyInlineDescendant[];
+export type KateInlineElement =
+  | KateLinkElement
+  | KateMentionElement
+  | KateMentionInputElement;
+export type KateInlineDescendant = KateInlineElement | RichText;
+export type KateInlineChildren = KateInlineDescendant[];
 
 /**
  * Block props
  */
 
-export interface MyIndentProps {
-    indent?: number;
+export interface KateIndentProps {
+  indent?: number;
 }
 
-export interface MyIndentListProps extends MyIndentProps {
-    listStart?: number;
-    listStyleType?: string;
+export interface KateIndentListProps extends KateIndentProps {
+  listStart?: number;
+  listStyleType?: string;
 }
 
-export interface MyLineHeightProps {
-    lineHeight?: CSSProperties['lineHeight'];
+export interface KateLineHeightProps {
+  lineHeight?: CSSProperties['lineHeight'];
 }
 
-export interface MyAlignProps {
-    textAlign?: CSSProperties['textAlign'];
+export interface KateAlignProps {
+  textAlign?: CSSProperties['textAlign'];
 }
 
-export interface MyBlockElement
-    extends TElement,
-    MyIndentListProps,
-    MyLineHeightProps {
-    id?: string;
+export interface KateBlockElement
+  extends TElement,
+    KateIndentListProps,
+    KateLineHeightProps {
+  id?: string;
 }
 
 /**
  * Blocks
  */
 
-export interface MyParagraphElement extends MyBlockElement {
-    type: typeof ELEMENT_PARAGRAPH;
-    children: MyInlineChildren;
+export interface KateParagraphElement extends KateBlockElement {
+  type: typeof ELEMENT_PARAGRAPH;
+  children: KateInlineChildren;
 }
 
-export interface MyH1Element extends MyBlockElement {
-    type: typeof ELEMENT_H1;
-    children: MyInlineChildren;
+export interface KateH1Element extends KateBlockElement {
+  type: typeof ELEMENT_H1;
+  children: KateInlineChildren;
 }
 
-export interface MyH2Element extends MyBlockElement {
-    type: typeof ELEMENT_H2;
-    children: MyInlineChildren;
+export interface KateH2Element extends KateBlockElement {
+  type: typeof ELEMENT_H2;
+  children: KateInlineChildren;
 }
 
-export interface MyH3Element extends MyBlockElement {
-    type: typeof ELEMENT_H3;
-    children: MyInlineChildren;
+export interface KateH3Element extends KateBlockElement {
+  type: typeof ELEMENT_H3;
+  children: KateInlineChildren;
 }
 
-export interface MyBlockquoteElement extends MyBlockElement {
-    type: typeof ELEMENT_BLOCKQUOTE;
-    children: MyInlineChildren;
+export interface KateBlockquoteElement extends KateBlockElement {
+  type: typeof ELEMENT_BLOCKQUOTE;
+  children: KateInlineChildren;
 }
 
-export interface MyCodeBlockElement extends MyBlockElement {
-    type: typeof ELEMENT_CODE_BLOCK;
-    children: MyCodeLineElement[];
+export interface KateCodeBlockElement extends KateBlockElement {
+  type: typeof ELEMENT_CODE_BLOCK;
+  children: KateCodeLineElement[];
 }
 
-export interface MyCodeLineElement extends TElement {
-    type: typeof ELEMENT_CODE_LINE;
-    children: PlainText[];
+export interface KateCodeLineElement extends TElement {
+  type: typeof ELEMENT_CODE_LINE;
+  children: PlainText[];
 }
 
-export interface MyTableElement extends TTableElement, MyBlockElement {
-    type: typeof ELEMENT_TABLE;
-    children: MyTableRowElement[];
+export interface KateTableElement extends TTableElement, KateBlockElement {
+  type: typeof ELEMENT_TABLE;
+  children: KateTableRowElement[];
 }
 
-export interface MyTableRowElement extends TElement {
-    type: typeof ELEMENT_TR;
-    children: MyTableCellElement[];
+export interface KateTableRowElement extends TElement {
+  type: typeof ELEMENT_TR;
+  children: KateTableCellElement[];
 }
 
-export interface MyTableCellElement extends TElement {
-    type: typeof ELEMENT_TD;
-    children: MyNestableBlock[];
+export interface KateTableCellElement extends TElement {
+  type: typeof ELEMENT_TD;
+  children: KateNestableBlock[];
 }
 
-export interface MyBulletedListElement extends TElement, MyBlockElement {
-    type: typeof ELEMENT_UL;
-    children: MyListItemElement[];
+export interface KateBulletedListElement extends TElement, KateBlockElement {
+  type: typeof ELEMENT_UL;
+  children: KateListItemElement[];
 }
 
-export interface MyNumberedListElement extends TElement, MyBlockElement {
-    type: typeof ELEMENT_OL;
-    children: MyListItemElement[];
+export interface KateNumberedListElement extends TElement, KateBlockElement {
+  type: typeof ELEMENT_OL;
+  children: KateListItemElement[];
 }
 
-export interface MyListItemElement extends TElement, MyBlockElement {
-    type: typeof ELEMENT_LI;
-    children: MyInlineChildren;
+export interface KateListItemElement extends TElement, KateBlockElement {
+  type: typeof ELEMENT_LI;
+  children: KateInlineChildren;
 }
 
-export interface MyTodoListElement
-    extends TTodoListItemElement,
-    MyBlockElement {
-    type: typeof ELEMENT_TODO_LI;
-    children: MyInlineChildren;
+export interface KateTodoListElement
+  extends TTodoListItemElement,
+    KateBlockElement {
+  type: typeof ELEMENT_TODO_LI;
+  children: KateInlineChildren;
 }
 
-export interface MyImageElement extends TImageElement, MyBlockElement {
-    type: typeof ELEMENT_IMAGE;
-    children: [EmptyText];
+export interface KateImageElement extends TImageElement, KateBlockElement {
+  type: typeof ELEMENT_IMAGE;
+  children: [EmptyText];
 }
 
-export interface MyMediaEmbedElement
-    extends TMediaEmbedElement,
-    MyBlockElement {
-    type: typeof ELEMENT_MEDIA_EMBED;
-    children: [EmptyText];
+export interface KateMediaEmbedElement
+  extends TMediaEmbedElement,
+    KateBlockElement {
+  type: typeof ELEMENT_MEDIA_EMBED;
+  children: [EmptyText];
 }
 
-export interface MyHrElement extends MyBlockElement {
-    type: typeof ELEMENT_HR;
-    children: [EmptyText];
+export interface KateHrElement extends KateBlockElement {
+  type: typeof ELEMENT_HR;
+  children: [EmptyText];
 }
 
-// export interface MyExcalidrawElement
-//   extends TExcalidrawElement,
-//     MyBlockElement {
-//   type: typeof ELEMENT_EXCALIDRAW;
-//   children: [EmptyText];
-// }
+export type KateNestableBlock = KateParagraphElement;
 
-export type MyNestableBlock = MyParagraphElement;
+export type KateBlock = Exclude<KateElement, KateInlineElement>;
+export type KateBlockEntry = TNodeEntry<KateBlock>;
 
-export type MyBlock = Exclude<MyElement, MyInlineElement>;
-export type MyBlockEntry = TNodeEntry<MyBlock>;
+export type KateRootBlock =
+  | KateParagraphElement
+  | KateH1Element
+  | KateH2Element
+  | KateH3Element
+  | KateBlockquoteElement
+  | KateCodeBlockElement
+  | KateTableElement
+  | KateBulletedListElement
+  | KateNumberedListElement
+  | KateTodoListElement
+  | KateImageElement
+  | KateMediaEmbedElement
+  | KateHrElement;
 
-export type MyRootBlock =
-    | MyParagraphElement
-    | MyH1Element
-    | MyH2Element
-    | MyH3Element
-    | MyBlockquoteElement
-    | MyCodeBlockElement
-    | MyTableElement
-    | MyBulletedListElement
-    | MyNumberedListElement
-    | MyTodoListElement
-    | MyImageElement
-    | MyMediaEmbedElement
-    | MyHrElement;
-// | MyExcalidrawElement;
-
-export type MyValue = MyRootBlock[];
+export type KateValue = KateRootBlock[];
 
 /**
  * Editor types
  */
 
-export type MyEditor = PlateEditor<MyValue> & { isDragging?: boolean };
-export type MyReactEditor = TReactEditor<MyValue>;
-export type MyNode = ENode<MyValue>;
-export type MyNodeEntry = ENodeEntry<MyValue>;
-export type MyElement = EElement<MyValue>;
-export type MyElementEntry = EElementEntry<MyValue>;
-export type MyText = EText<MyValue>;
-export type MyTextEntry = ETextEntry<MyValue>;
-export type MyElementOrText = EElementOrText<MyValue>;
-export type MyDescendant = EDescendant<MyValue>;
-export type MyMarks = EMarks<MyValue>;
-export type MyMark = keyof MyMarks;
+export type KateEditor = PlateEditor<KateValue> & { isDragging?: boolean };
+export type KateReactEditor = TReactEditor<KateValue>;
+export type KateNode = ENode<KateValue>;
+export type KateNodeEntry = ENodeEntry<KateValue>;
+export type KateElement = EElement<KateValue>;
+export type KateElementEntry = EElementEntry<KateValue>;
+export type KateText = EText<KateValue>;
+export type KateTextEntry = ETextEntry<KateValue>;
+export type KateElementOrText = EElementOrText<KateValue>;
+export type KateDescendant = EDescendant<KateValue>;
+export type KateMarks = EMarks<KateValue>;
+export type KateMark = keyof KateMarks;
 
 /**
  * Plate types
  */
 
-export type MyDecorate<P = PluginOptions> = Decorate<P, MyValue, MyEditor>;
-export type MyDecorateEntry = DecorateEntry<MyValue>;
-export type MyDOMHandler<P = PluginOptions> = DOMHandler<P, MyValue, MyEditor>;
-export type MyInjectComponent = InjectComponent<MyValue>;
-export type MyInjectProps = InjectProps<MyValue>;
-export type MyKeyboardHandler<P = PluginOptions> = KeyboardHandler<
-    P,
-    MyValue,
-    MyEditor
+export type KateDecorate<P = PluginOptions> = Decorate<
+  P,
+  KateValue,
+  KateEditor
 >;
-export type MyOnChange<P = PluginOptions> = OnChange<P, MyValue, MyEditor>;
-export type MyOverrideByKey = OverrideByKey<MyValue, MyEditor>;
-export type MyPlatePlugin<P = PluginOptions> = PlatePlugin<
-    P,
-    MyValue,
-    MyEditor
+export type KateDecorateEntry = DecorateEntry<KateValue>;
+export type KateDOMHandler<P = PluginOptions> = DOMHandler<
+  P,
+  KateValue,
+  KateEditor
 >;
-export type MyPlatePluginInsertData = PlatePluginInsertData<MyValue>;
-export type MyPlatePluginProps = PlatePluginProps<MyValue>;
-export type MyPlateProps = PlateProps<MyValue, MyEditor>;
-export type MySerializeHtml = SerializeHtml<MyValue>;
-export type MyWithOverride<P = PluginOptions> = WithOverride<
-    P,
-    MyValue,
-    MyEditor
+export type KateInjectComponent = InjectComponent<KateValue>;
+export type KateInjectProps = InjectProps<KateValue>;
+export type KateKeyboardHandler<P = PluginOptions> = KeyboardHandler<
+  P,
+  KateValue,
+  KateEditor
+>;
+export type KateOnChange<P = PluginOptions> = OnChange<
+  P,
+  KateValue,
+  KateEditor
+>;
+export type KateOverrideByKey = OverrideByKey<KateValue, KateEditor>;
+export type KatePlatePlugin<P = PluginOptions> = PlatePlugin<
+  P,
+  KateValue,
+  KateEditor
+>;
+export type KatePlatePluginInsertData = PlatePluginInsertData<KateValue>;
+export type KatePlatePluginProps = PlatePluginProps<KateValue>;
+export type KatePlateProps = PlateProps<KateValue, KateEditor>;
+export type KateSerializeHtml = SerializeHtml<KateValue>;
+export type KateWithOverride<P = PluginOptions> = WithOverride<
+  P,
+  KateValue,
+  KateEditor
 >;
 
 /**
  * Plate store, Slate context
  */
 
-export const getMyEditor = (editor: MyEditor) =>
-    getTEditor<MyValue, MyEditor>(editor);
-export const useMyEditorRef = () => useEditorRef<MyValue, MyEditor>();
-export const useMyEditorState = () => useEditorState<MyValue, MyEditor>();
+export const getMyEditor = (editor: KateEditor) =>
+  getTEditor<KateValue, KateEditor>(editor);
+export const useMyEditorRef = () => useEditorRef<KateValue, KateEditor>();
+export const useMyEditorState = () => useEditorState<KateValue, KateEditor>();
 export const useMyPlateEditorRef = (id?: string) =>
-    usePlateEditorRef<MyValue, MyEditor>(id);
+  usePlateEditorRef<KateValue, KateEditor>(id);
 export const getMyPlateEditorRef = (id?: string) =>
-    getPlateEditorRef<MyValue, MyEditor>(id);
+  getPlateEditorRef<KateValue, KateEditor>(id);
 export const useMyPlateEditorState = (id?: string) =>
-    usePlateEditorState<MyValue, MyEditor>(id);
+  usePlateEditorState<KateValue, KateEditor>(id);
 export const useMyPlateSelectors = (id?: string) =>
-    usePlateSelectors<MyValue, MyEditor>(id);
+  usePlateSelectors<KateValue, KateEditor>(id);
 export const getMyPlateSelectors = (id?: string) =>
-    getPlateSelectors<MyValue, MyEditor>(id);
+  getPlateSelectors<KateValue, KateEditor>(id);
 export const getMyPlateActions = (id?: string) =>
-    getPlateActions<MyValue, MyEditor>(id);
+  getPlateActions<KateValue, KateEditor>(id);
 
 /**
  * Utils
  */
-export const createMyEditor = () => createTEditor() as MyEditor;
+export const createMyEditor = () => createTEditor() as KateEditor;
 export const createMyPlateEditor = (
-    options: CreatePlateEditorOptions<MyValue, MyEditor> = {}
-) => createPlateEditor<MyValue, MyEditor>(options);
+  options: CreatePlateEditorOptions<KateValue, KateEditor> = {}
+) => createPlateEditor<KateValue, KateEditor>(options);
 export const createMyPluginFactory = <P = PluginOptions>(
-    defaultPlugin: PlatePlugin<NoInfer<P>, MyValue, MyEditor>
+  defaultPlugin: PlatePlugin<NoInfer<P>, KateValue, KateEditor>
 ) => createPluginFactory(defaultPlugin);
 export const createMyPlugins = (
-    plugins: MyPlatePlugin[],
-    options?: {
-        components?: Record<string, PlatePluginComponent>;
-        overrideByKey?: MyOverrideByKey;
-    }
-) => createPlugins<MyValue, MyEditor>(plugins, options);
+  plugins: KatePlatePlugin[],
+  options?: {
+    components?: Record<string, PlatePluginComponent>;
+    overrideByKey?: KateOverrideByKey;
+  }
+) => createPlugins<KateValue, KateEditor>(plugins, options);
 
-export type MyAutoformatRule = AutoformatRule<MyValue, MyEditor>;
+export type KateAutoformatRule = AutoformatRule<KateValue, KateEditor>;

@@ -1,8 +1,8 @@
 import { findEventRange } from '@udecode/plate-core';
-import { MyPlatePlugin } from '../plateTypes';
+import { KatePlatePlugin } from '../plateTypes';
 import { cursorStore } from './cursorStore';
 
-export const dragOverCursorPlugin: MyPlatePlugin = {
+export const dragOverCursorPlugin: KatePlatePlugin = {
   key: 'drag-over-cursor',
   handlers: {
     onDragOver: (editor: any) => (event: any) => {
