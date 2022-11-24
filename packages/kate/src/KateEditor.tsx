@@ -32,9 +32,6 @@ const createEditableProps = (readOnly: boolean, placeholder: string) =>
   readOnly,
 } as TEditableProps<KateValue>);
 
-const components = createPlateUI({
-  [ELEMENT_CODE_BLOCK]: StyledElement,
-});
 
 const styles: Record<string, CSSProperties> = {
   container: { position: 'relative' },
@@ -47,10 +44,43 @@ type KateEditorProps = {
   readOnly: boolean;
   placeholder: string;
   config: IKateConfigItem[];
+  id?: string;
 };
-
+function generateUUID() {
+  // Public Domain/MIT
+  let d = new Date().getTime(); // Timestamp
+  let d2 =
+    (typeof performance !== 'undefined' &&
+      performance.now &&
+      performance.now() * 1000) ||
+    0; // Time in microseconds since page-load or 0 if unsupported
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    let r = Math.random() * 16; // random number between 0 and 16
+    if (d > 0) {
+      // Use timestamp until depleted
+      r = (d + r) % 16 | 0;
+      d = Math.floor(d / 16);
+    } else {
+      // Use microseconds since page-load if supported
+      r = (d2 + r) % 16 | 0;
+      d2 = Math.floor(d2 / 16);
+    }
+    return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
+  });
+}
 const KateEditor = (props: KateEditorProps) => {
+  const [id, setId] = useState(props.id ?? generateUUID());
+  console.log('kateeditor id', id);
   const { plugins, toolbarButtonRenderFuncs } = useMemo(() => {
+
+    const components = createPlateUI({
+      [ELEMENT_CODE_BLOCK]: StyledElement,
+      ...props.config.reduce(
+        (prev, curr) => ({ ...prev, ...(curr.overrideComponents || {}) }),
+        {}
+      ),
+    });
+
     return {
       plugins: createMyPlugins(
         [
@@ -63,8 +93,8 @@ const KateEditor = (props: KateEditorProps) => {
         ],
         {
           components: withStyledDraggables(
-            components, 
-            props.config.flatMap((x) => x.withUi).filter(x => !!x)
+            components,
+            props.config.flatMap((x) => x.withUi).filter((x) => !!x)
           ),
         }
       ),
@@ -72,81 +102,6 @@ const KateEditor = (props: KateEditorProps) => {
     };
   }, [props.config]);
 
-  // const plugins = useMemo(
-  //   () =>
-  //     createMyPlugins(
-  //       [
-  //         // createParagraphPlugin(),
-  //         // createBlockquotePlugin(),
-  //         // createTodoListPlugin(),
-  //         // createImagePlugin(),
-  //         // createHorizontalRulePlugin(),
-  //         // createLinkPlugin(),
-  //         // createListPlugin(),
-  //         // createTablePlugin(),
-  //         // createMediaEmbedPlugin(),
-  //         // createCodeBlockPlugin(),
-  //         // createAlignPlugin(alignPlugin),
-  //         // createBoldPlugin(),
-  //         // createCodePlugin(),
-  //         // createItalicPlugin(),
-  //         // createHighlightPlugin(),
-  //         // createUnderlinePlugin(),
-  //         // createStrikethroughPlugin(),
-  //         // createSubscriptPlugin(),
-  //         // createSuperscriptPlugin(),
-  //         // createFontColorPlugin(),
-  //         // createFontBackgroundColorPlugin(),
-  //         // createFontSizePlugin(),
-  //         // createKbdPlugin(),
-  //         // createNodeIdPlugin(),
-  //         // createDndPlugin(),
-  //         // dragOverCursorPlugin,
-  //         // createIndentPlugin(indentPlugin),
-  // late.createAutoformatPlugin<
-  //   AutoformatPlugin<MyValue, MyEditor>,
-  //   MyValue,
-  //   MyEditor
-  // >(autoformatPlugin),
-  //         // createResetNodePlugin(resetBlockTypePlugin),
-  //         // createSoftBreakPlugin(softBreakPlugin),
-  //         // createExitBreakPlugin(exitBreakPlugin),
-  //         // // createNormalizeTypesPlugin(forcedLayoutPlugin),
-  //         // createTrailingBlockPlugin(trailingBlockPlugin),
-  //         // createSelectOnBackspacePlugin(selectOnBackspacePlugin),
-  //         // createComboboxPlugin(),
-  //         // // plate.createMentionPlugin(),
-
-  //         // createMentionPlugin({
-  //         //   key: '{',
-  //         //   component: (props: any) => {
-  //         //     console.log('mention', props);
-  //         //     return (
-  //         //       <span
-  //         //         style={{
-  //         //           backgroundColor: '#000',
-  //         //           color: '#fff',
-  //         //           padding: '0.25rem',
-  //         //         }}
-  //         //       >
-  //         //         {props.element.value}
-  //         //       </span>
-  //         //     );
-  //         //   },
-  //         //   options: {
-  //         //     trigger: '{',
-
-  //         //     inputCreation: { key: 'creationId', value: 'main' },
-  //         //   },
-  //         // }),
-  //         // createJuicePlugin() as MyPlatePlugin,
-  //       ],
-  //       {
-  //         components: withStyledDraggables(components),
-  //       }
-  //     ),
-  //   []
-  // );
   const containerRef = useRef(null);
 
   const [editableProps, setEditableProps] = useState<any>(
@@ -187,6 +142,7 @@ const KateEditor = (props: KateEditorProps) => {
           )}
           <div ref={containerRef} style={styles.container}>
             <Plate<KateValue, IKateEditor>
+              id={id}
               value={value}
               onChange={handleChange}
               plugins={plugins}
@@ -196,7 +152,7 @@ const KateEditor = (props: KateEditorProps) => {
               <CursorOverlayContainer containerRef={containerRef} />
             </Plate>
           </div>
-          </DndProvider>
+        </DndProvider>
       </div>
     </div>
   );
