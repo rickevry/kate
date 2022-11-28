@@ -85,14 +85,15 @@
 //     MarkToolbarButton,
 //     ToolbarButton,
 // } from '@udecode/plate-ui-toolbar';
+import { useEventPlateId } from '@udecode/plate-core';
 import { useMyPlateEditorRef } from './plateTypes';
 
 export const ToolbarButtons = ({
-  toolbarButtonRenderFuncs,
+  toolbarButtonRenderFuncs
 }: {
-  toolbarButtonRenderFuncs: any;
+  toolbarButtonRenderFuncs: any,
 }) => {
-  const editor = useMyPlateEditorRef()!;
+  const editor = useMyPlateEditorRef(useEventPlateId())!;
   // const colorTooltip: TippyProps = { content: 'Text color' };
   // const bgTooltip: TippyProps = { content: 'Text color' };
 

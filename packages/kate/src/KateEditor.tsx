@@ -16,7 +16,6 @@ import { StyledElement } from '@udecode/plate-styled-components';
 import { createPlateUI, Toolbar } from '@udecode/plate-ui';
 import { IKateConfigItem } from './configuration/types';
 import { CursorOverlayContainer } from './plugins/CursorOverlayContainer';
-import { MarkBalloonToolbar } from './plugins/MarkBallonToolbar';
 import { withStyledDraggables } from './plugins/withStyledDraggables';
 import {
   createMyPlugins,
@@ -24,6 +23,9 @@ import {
   KateValue,
 } from './plateTypes';
 import { ToolbarButtons } from './ToolbarButtons';
+import { createDndPlugin } from '@udecode/plate-ui-dnd';
+import { createNodeIdPlugin } from './plugins/CreateNodeId';
+// import { createNodeIdPlugin } from './plugins/CreateNodeId';
 
 const createEditableProps = (readOnly: boolean, placeholder: string) =>
 ({
@@ -80,7 +82,7 @@ const KateEditor = (props: KateEditorProps) => {
         {}
       ),
     });
-
+    console.log("props.config.", props.config)
     return {
       plugins: createMyPlugins(
         [
@@ -89,6 +91,8 @@ const KateEditor = (props: KateEditorProps) => {
           createDeserializeMdPlugin(),
           createDeserializeCsvPlugin(),
           createDeserializeDocxPlugin(),
+          createDndPlugin({ options: { enableScroller: true } }),
+          createNodeIdPlugin(),
           ...props.config.flatMap((x) => x.plugins),
         ],
         {
@@ -148,7 +152,6 @@ const KateEditor = (props: KateEditorProps) => {
               plugins={plugins}
               editableProps={editableProps}
             >
-              <MarkBalloonToolbar />
               <CursorOverlayContainer containerRef={containerRef} />
             </Plate>
           </div>

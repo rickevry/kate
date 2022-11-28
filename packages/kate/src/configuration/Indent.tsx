@@ -3,6 +3,7 @@ import {
   FormatIndentDecrease,
   FormatIndentIncrease,
 } from '@styled-icons/material';
+
 import { createIndentPlugin, indent, outdent } from '@udecode/plate-indent';
 import { ToolbarButton } from '@udecode/plate-ui-toolbar';
 import { KateEditor } from '../plateTypes';
@@ -15,8 +16,8 @@ export const createIndentConfig = (): IKateConfigItem => {
     renderButtons: (editor: KateEditor) => [
       <ToolbarButton
         onMouseDown={(e) => {
+          console.log("editor", editor)
           if (!editor) return;
-
           outdent(editor);
           e.preventDefault();
         }}
@@ -24,8 +25,8 @@ export const createIndentConfig = (): IKateConfigItem => {
       />,
       <ToolbarButton
         onMouseDown={(e) => {
+          console.log("editor", editor)
           if (!editor) return;
-
           indent(editor);
           e.preventDefault();
         }}
