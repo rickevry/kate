@@ -16,7 +16,6 @@ import { StyledElement } from '@udecode/plate-styled-components';
 import { createPlateUI, Toolbar } from '@udecode/plate-ui';
 import { IKateConfigItem } from './configuration/types';
 import { CursorOverlayContainer } from './plugins/CursorOverlayContainer';
-import { withStyledDraggables } from './plugins/withStyledDraggables';
 import {
   createMyPlugins,
   KateEditor as IKateEditor,
@@ -28,12 +27,11 @@ import { createNodeIdPlugin } from './plugins/CreateNodeId';
 // import { createNodeIdPlugin } from './plugins/CreateNodeId';
 
 const createEditableProps = (readOnly: boolean, placeholder: string) =>
-({
-  placeholder: placeholder ?? 'Type here ...',
-  spellCheck: false,
-  readOnly,
-} as TEditableProps<KateValue>);
-
+  ({
+    placeholder: placeholder ?? 'Type here ...',
+    spellCheck: false,
+    readOnly,
+  } as TEditableProps<KateValue>);
 
 const styles: Record<string, CSSProperties> = {
   container: { position: 'relative' },
@@ -74,7 +72,6 @@ const KateEditor = (props: KateEditorProps) => {
   const [id, setId] = useState(props.id ?? generateUUID());
   console.log('kateeditor id', id);
   const { plugins, toolbarButtonRenderFuncs } = useMemo(() => {
-
     const components = createPlateUI({
       [ELEMENT_CODE_BLOCK]: StyledElement,
       ...props.config.reduce(
@@ -82,7 +79,7 @@ const KateEditor = (props: KateEditorProps) => {
         {}
       ),
     });
-    console.log("props.config.", props.config)
+    console.log('props.config.', props.config);
     return {
       plugins: createMyPlugins(
         [
@@ -91,15 +88,12 @@ const KateEditor = (props: KateEditorProps) => {
           createDeserializeMdPlugin(),
           createDeserializeCsvPlugin(),
           createDeserializeDocxPlugin(),
-          createDndPlugin({ options: { enableScroller: true } }),
+
           createNodeIdPlugin(),
           ...props.config.flatMap((x) => x.plugins),
         ],
         {
-          components: withStyledDraggables(
-            components,
-            props.config.flatMap((x) => x.withUi).filter((x) => !!x)
-          ),
+          components: { ...components },
         }
       ),
       toolbarButtonRenderFuncs: props.config.flatMap((x) => x.renderButtons),
