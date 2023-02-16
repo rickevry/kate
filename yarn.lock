@@ -5366,9 +5366,9 @@ __metadata:
     react-dnd: ">=14.0.0"
     react-dnd-html5-backend: ">=14.0.0"
     react-dom: ">=16.8.0"
-    slate: ">=0.66.1"
+    slate: 0.88.1
     slate-history: ">=0.66.0"
-    slate-react: ">=0.74.2"
+    slate-react: 0.88.2
   languageName: unknown
   linkType: soft
 

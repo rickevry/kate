@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-console */
 // import './style.css';
-import React, { CSSProperties, useMemo, useRef, useState } from 'react';
+import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { createAutoformatPlugin } from '@udecode/plate-autoformat';
@@ -24,14 +24,16 @@ import {
 import { ToolbarButtons } from './ToolbarButtons';
 import { createDndPlugin } from '@udecode/plate-ui-dnd';
 import { createNodeIdPlugin } from './plugins/CreateNodeId';
-// import { createNodeIdPlugin } from './plugins/CreateNodeId';
+import { version } from '../package.json';
+
+console.log(`KateEditor version ${version}`);
 
 const createEditableProps = (readOnly: boolean, placeholder: string) =>
-  ({
-    placeholder: placeholder ?? 'Type here ...',
-    spellCheck: false,
-    readOnly,
-  } as TEditableProps<KateValue>);
+({
+  placeholder: placeholder ?? 'Type here ...',
+  spellCheck: false,
+  readOnly,
+} as TEditableProps<KateValue>);
 
 const styles: Record<string, CSSProperties> = {
   container: { position: 'relative' },
@@ -45,6 +47,7 @@ type KateEditorProps = {
   placeholder: string;
   config: IKateConfigItem[];
   id?: string;
+  customStyles?: Record<string, React.CSSProperties>;
 };
 function generateUUID() {
   // Public Domain/MIT
@@ -100,7 +103,7 @@ const KateEditor = (props: KateEditorProps) => {
     };
   }, [props.config]);
 
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const [editableProps, setEditableProps] = useState<any>(
     createEditableProps(props.readOnly, props.placeholder)
@@ -124,6 +127,30 @@ const KateEditor = (props: KateEditorProps) => {
     }
   };
 
+  const checkForEditorNode = () => {
+    const editorDiv = containerRef.current?.querySelector('div[data-slate-editor="true"]') as HTMLDivElement;
+
+    if (editorDiv)  {
+      console.log("checkForEditorNode found ", { editorDiv })
+
+      editorDiv.style.minHeight = "inherit";
+
+      if (props.customStyles?.editor) {
+        Object.keys(props.customStyles.editor).forEach(key => {
+          editorDiv.style[key] = props.customStyles?.editor[key];
+        });
+      }
+
+      return true;
+    }
+
+    setTimeout(() => checkForEditorNode(), 10);
+  };
+
+  useEffect(() => {
+    checkForEditorNode();
+  }, []);
+
   return (
     <div className="App">
       <div
@@ -138,7 +165,7 @@ const KateEditor = (props: KateEditorProps) => {
               />
             </Toolbar>
           )}
-          <div ref={containerRef} style={styles.container}>
+          <div ref={containerRef} style={Object.assign({}, styles.container, props.customStyles?.container)}>
             <Plate<KateValue, IKateEditor>
               id={id}
               value={value}

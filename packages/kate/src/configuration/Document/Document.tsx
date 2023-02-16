@@ -1,14 +1,25 @@
 /* eslint-disable no-console */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from '@styled-icons/material';
 import {
   createPluginFactory,
+  findNode,
+  getAboveNode,
+  getNextNodeStartPoint,
   getParentNode,
+  getPluginType,
+  getPreviousNodeEndPoint,
   insertNodes,
+  isCollapsed,
+  isEndPoint,
+  isStartPoint,
+  mockPlugin,
   moveSelection,
   PlateEditor,
   PlatePluginComponent,
+  select,
   TElement,
+  toSlateNode,
   Value,
   withoutNormalizing,
 } from '@udecode/plate-core';
@@ -20,9 +31,12 @@ import {
 import { createParagraphPlugin } from '@udecode/plate-paragraph';
 import { ToolbarButton } from '@udecode/plate-ui-toolbar';
 import isHotkey from 'is-hotkey';
-import { Range } from 'slate';
-import { KateEditor } from '../plateTypes';
-import { IKateConfigItem } from './types';
+import { Path, Range } from 'slate';
+import { KateEditor } from '../../plateTypes';
+import { IKateConfigItem } from '../types';
+import { withRemoveEmptyNodes } from '@udecode/plate-normalizers';
+import { DocumentFloatingLink, customFloatingLinkActions } from './PlateLink';
+import { floatingLinkActions } from '@udecode/plate-link';
 
 const ELEMENT_DOCUMENT = 'document';
 
@@ -90,34 +104,122 @@ const FileIcon = ({ fileName }: { fileName: string }) => {
   );
 };
 
-const Document: PlatePluginComponent = ({ children, element }) => {
+const DOCUMENT_WRAPPER_CLASSLIST = "kate-plugin-document";
+
+const Document: PlatePluginComponent = (props) => {
+  const { children, element, componentStyle, editor } = props;
+  const [show, setShow] = React.useState<boolean>(false);
+  const wrapperRef = React.useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onClickHandler = (e: any) => {
+      console.log("body mousedown", { e, wrapperRef, contains: wrapperRef.current?.contains(e.target) });
+
+      if (e.target !== wrapperRef.current && !wrapperRef.current?.contains(e.target)) {
+        const entry = findNode(editor, {
+          match: {
+            type: getPluginType(editor, ELEMENT_DOCUMENT)
+          }
+        });
+
+        if (!entry) {
+          console.log("body mousedown hide");
+          // window["plate_kate_plate_link_hide"] && window["plate_kate_plate_link_hide"]();
+        }
+      }
+    };
+
+    document.body.addEventListener("mousedown", onClickHandler);
+
+    return () => {
+      document.body.removeEventListener("mousedown", onClickHandler);
+    }
+  }, []);
+
+  console.log("document plate plugin", { props, children, element });
   return (
-    <>
+    <span className={DOCUMENT_WRAPPER_CLASSLIST} ref={wrapperRef}>
       <span
         contentEditable={false}
-        style={{
-          background: '#ccc',
+        style={Object.assign({
+          background: '#ddd',
           padding: '0.25em 0.5em',
+          // margin: '0 0.4em',
           display: 'inline-flex',
           gap: '0.25em',
           fontSize: '0.8em',
           alignItems: 'center',
+          borderRadius: "4px"
+        }, componentStyle)}
+        css="margin: 2px 4px; :first-child { margin-left: 0 } :last-child { margin-right: 0 }"
+        onMouseDown={e => {
+          // e.preventDefault();
+          // e.stopPropagation();
+          // const test = toSlateNode(editor, e.target as Node);
+          // console.log("tada!", { e, element, test, props });
+          // setShow(true);
+          floatingLinkActions.hide();
+          window["plate_kate_plate_link_show"] && window["plate_kate_plate_link_show"](wrapperRef.current);
         }}
       >
         <FileIcon fileName={element.documentData.name} />
         <span>{element.documentData.name}</span>
       </span>
+      {/* {show && <DocumentFloatingLink />} */}
       {children}
-    </>
+    </span>
   );
 };
 
-const createDocumentPlugin = createPluginFactory({
+// const Document: PlatePluginComponent = ({ children, element }) => {
+//   return (
+//     <>
+//       <span
+//         contentEditable={false}
+//         style={{
+//           background: '#ccc',
+//           padding: '0.25em 0.5em',
+//           display: 'inline-flex',
+//           gap: '0.25em',
+//           fontSize: '0.8em',
+//           alignItems: 'center',
+//         }}
+//       >
+//         <FileIcon fileName={element.documentData.name} />
+//         <span>{element.documentData.name}</span>
+//       </span>
+//       {children}
+//     </>
+//   );
+// };
+
+
+const createDocumentPlugin = (options: IDocumentConfigItemOptions, ...args: any[]) => createPluginFactory({
   key: ELEMENT_DOCUMENT,
   isElement: true,
   isInline: true,
   isVoid: true,
+  // isLeaf: true,
   handlers: {
+    onMouseDown: (editor, plugin) => {
+      console.log("onMouseDown 1", { editor, plugin });
+      return e => {
+        let element: HTMLElement | null = e.target as HTMLElement;
+
+        while (element) {
+          if (element.classList.contains(DOCUMENT_WRAPPER_CLASSLIST)) {
+
+            return false;
+          }
+
+          element = element.parentElement;
+        }
+
+        window["plate_kate_plate_link_hide"] && window["plate_kate_plate_link_hide"]();
+
+        return false;
+      }
+    },
     onKeyDown: (editor) => {
       console.log('onKeyDown???', editor);
       const f = moveSelectionByOffsetForDocument(editor, {});
@@ -128,13 +230,14 @@ const createDocumentPlugin = createPluginFactory({
       };
     },
   },
+  props: options,
   component: Document,
   then: (editor, { key }) => ({
     options: {
       id: key,
     },
   }),
-});
+})(...args);
 
 interface IDocumentData {
   id: string;
@@ -144,6 +247,7 @@ interface IDocumentData {
 
 interface IDocumentConfigItemOptions {
   getData: () => Promise<IDocumentData>;
+  componentStyle?: React.CSSProperties;
 }
 
 export interface TDocumentElement extends TElement {
@@ -188,7 +292,8 @@ export const createDocumentConfig = (
   options: IDocumentConfigItemOptions
 ): IKateConfigItem => {
   return {
-    plugins: [createDocumentPlugin()],
+    // plugins: [createDocumentPlugin(options)],
+    plugins: [createDocumentPlugin(options, { renderAfterEditable: DocumentFloatingLink })],
     renderButtons: (editor: KateEditor) => [
       <ToolbarButton
         icon={<Link />}

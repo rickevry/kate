@@ -6,4 +6,4 @@ export * from './Indent';
 export * from './Bold';
 export * from './Italic';
 export * from './Link';
-export * from './Document';
+export * from './Document/Document';
