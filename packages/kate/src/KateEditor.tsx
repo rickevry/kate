@@ -1,20 +1,27 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-console */
 // import './style.css';
-import React, { CSSProperties, useMemo, useRef, useState } from 'react';
+import React, {
+  CSSProperties,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { createAutoformatPlugin } from '@udecode/plate-autoformat';
 import { ELEMENT_CODE_BLOCK } from '@udecode/plate-code-block';
 import { Plate, TEditableProps } from '@udecode/plate-core';
-import { createMentionPlugin } from '@udecode/plate-mention';
 import { createParagraphPlugin } from '@udecode/plate-paragraph';
 import { createDeserializeCsvPlugin } from '@udecode/plate-serializer-csv';
 import { createDeserializeDocxPlugin } from '@udecode/plate-serializer-docx';
 import { createDeserializeMdPlugin } from '@udecode/plate-serializer-md';
 import { StyledElement } from '@udecode/plate-styled-components';
 import { createPlateUI, Toolbar } from '@udecode/plate-ui';
+import { version } from '../package.json';
 import { IKateConfigItem } from './configuration/types';
+import { createNodeIdPlugin } from './plugins/CreateNodeId';
 import { CursorOverlayContainer } from './plugins/CursorOverlayContainer';
 import {
   createMyPlugins,
@@ -22,9 +29,8 @@ import {
   KateValue,
 } from './plateTypes';
 import { ToolbarButtons } from './ToolbarButtons';
-import { createDndPlugin } from '@udecode/plate-ui-dnd';
-import { createNodeIdPlugin } from './plugins/CreateNodeId';
-// import { createNodeIdPlugin } from './plugins/CreateNodeId';
+
+console.log(`KateEditor version ${version}`);
 
 const createEditableProps = (readOnly: boolean, placeholder: string) =>
   ({
@@ -45,6 +51,7 @@ type KateEditorProps = {
   placeholder: string;
   config: IKateConfigItem[];
   id?: string;
+  customStyles?: Record<string, React.CSSProperties>;
 };
 function generateUUID() {
   // Public Domain/MIT
@@ -68,8 +75,9 @@ function generateUUID() {
     return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
   });
 }
+
 const KateEditor = (props: KateEditorProps) => {
-  const [id, setId] = useState(props.id ?? generateUUID());
+  const [id] = useState(props.id ?? generateUUID());
   console.log('kateeditor id', id);
   const { plugins, toolbarButtonRenderFuncs } = useMemo(() => {
     const components = createPlateUI({
@@ -100,7 +108,7 @@ const KateEditor = (props: KateEditorProps) => {
     };
   }, [props.config]);
 
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const [editableProps, setEditableProps] = useState<any>(
     createEditableProps(props.readOnly, props.placeholder)
@@ -124,6 +132,33 @@ const KateEditor = (props: KateEditorProps) => {
     }
   };
 
+  const checkForEditorNode = () => {
+    const editorDiv = containerRef.current?.querySelector(
+      'div[data-slate-editor="true"]'
+    ) as HTMLDivElement;
+
+    if (editorDiv) {
+      console.log('checkForEditorNode found ', { editorDiv });
+
+      editorDiv.style.minHeight = 'inherit';
+
+      if (props.customStyles?.editor) {
+        Object.keys(props.customStyles.editor).forEach((key) => {
+          editorDiv.style[key] = props.customStyles?.editor[key];
+        });
+      }
+
+      return true;
+    }
+
+    setTimeout(() => checkForEditorNode(), 10);
+  };
+
+  useEffect(() => {
+    checkForEditorNode();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="App">
       <div
@@ -138,7 +173,13 @@ const KateEditor = (props: KateEditorProps) => {
               />
             </Toolbar>
           )}
-          <div ref={containerRef} style={styles.container}>
+          <div
+            ref={containerRef}
+            style={{
+              ...styles.container,
+              ...(props.customStyles?.container ?? {}),
+            }}
+          >
             <Plate<KateValue, IKateEditor>
               id={id}
               value={value}
