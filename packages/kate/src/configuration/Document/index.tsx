@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, DocumentAdd } from '@styled-icons/material';
 import { ToolbarButton } from '@udecode/plate-ui-toolbar';
 import { KateEditor } from '../../plateTypes';
 import { IKateConfigItem } from '../types';
