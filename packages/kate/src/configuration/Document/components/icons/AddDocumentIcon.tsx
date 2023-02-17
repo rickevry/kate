@@ -1,5 +1,7 @@
 import React, { SVGProps } from 'react';
 
+const color = '#444444';
+
 export const AddDocumentIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     id="Layer_1"
@@ -9,49 +11,48 @@ export const AddDocumentIcon = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      d="M465.41,588.5H134.59c-14.96,0-27.09-12.13-27.09-27.09V38.59c0-14.96,12.13-27.09,27.09-27.09l244.41,.5,115,114-1.5,435.41c0,14.96-12.13,27.09-27.09,27.09Z"
+      d="M500.94,588.5H95.22c-18.35,0-33.22-12.13-33.22-27.09V38.59c0-14.96,14.87-27.09,33.22-27.09l356.78,.5,84,80-1.84,469.41c0,14.96-14.87,27.09-33.22,27.09Z"
       fill="none"
-      stroke="#000"
+      stroke={color}
       strokeLinejoin="round"
-      strokeWidth="22"
+      strokeWidth="50"
     />
     <line
-      x1="331.18"
-      y1="253.17"
-      x2="250.34"
-      y2="336.18"
+      x1="351.73"
+      y1="246.21"
+      x2="247.61"
+      y2="353.13"
       fill="none"
       stroke="#000"
       strokeLinecap="round"
       strokeMiterlimit="10"
-      strokeWidth="22"
+      strokeWidth="20"
     />
     <g>
       <path
-        d="M360.45,320.85l28.06-28.06c22.45-22.45,22.45-58.85,0-81.3h0c-22.45-22.45-58.85-22.45-81.3,0l-28.06,28.06"
+        d="M377.52,326.53l36.14-36.14c28.91-28.91,28.91-75.79,0-104.7h0c-28.91-28.91-75.79-28.91-104.7,0l-36.14,36.14"
         fill="none"
         stroke="#000"
         strokeLinecap="round"
         strokeMiterlimit="10"
-        strokeWidth="22"
+        strokeWidth="20"
       />
       <path
-        d="M239.55,279.15l-28.06,28.06c-22.45,22.45-22.45,58.85,0,81.3h0c22.45,22.45,58.85,22.45,81.3,0l28.06-28.06"
+        d="M221.82,272.82l-36.14,36.14c-28.91,28.91-28.91,75.79,0,104.7h0c28.91,28.91,75.79,28.91,104.7,0l36.14-36.14"
         fill="none"
         stroke="#000"
         strokeLinecap="round"
         strokeMiterlimit="10"
-        strokeWidth="22"
+        strokeWidth="20"
       />
     </g>
     <path
-      d="M405.17,126h87.83L379,12V99.83c0,14.46,11.72,26.17,26.17,26.17Z"
-      fill="none"
+      d="M471.29,92h64.71L452,12v61.63c0,10.14,8.63,18.37,19.29,18.37Z"
       fillRule="evenodd"
-      stroke="#000"
+      stroke={color}
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth="22"
+      strokeWidth="20"
     />
   </svg>
 );
