@@ -36,12 +36,13 @@ export const Document: PlatePluginComponent<{
         alignItems: 'center',
         userSelect: 'none',
         cursor: 'pointer',
+        margin: '2px 2px 2px 2px'
       }}
       {...attributes}
     >
       <FileIcon fileName={element.documentData.name} />
       {children}
-      <span>{element.documentData.name}</span>
+      <span>{element.documentData.title || element.documentData.name}</span>
     </span>
   );
 };

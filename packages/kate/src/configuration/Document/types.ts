@@ -3,6 +3,7 @@ import { TElement } from '@udecode/plate-core';
 export interface IDocumentData {
   id: string;
   name: string;
+  title?: string;
   metadata: { [key: string]: any };
 }
 

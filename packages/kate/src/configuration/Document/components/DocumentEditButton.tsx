@@ -7,6 +7,7 @@ import {
 export const DocumentEditButton = createComponentAs<AsProps<'button'>>(
   (props) => {
     return createElementAs('button', {
+      type: "button",
       ...props,
     });
   }

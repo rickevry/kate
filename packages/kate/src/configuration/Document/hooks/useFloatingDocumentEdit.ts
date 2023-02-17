@@ -62,6 +62,7 @@ export const useFloatingDocumentMenu = (props: any): HTMLPropsAs<'div'> => {
     },
     middleware: [
       offset(4),
+      offset({ crossAxis: -5 }),
       flip({
         padding: 0,
       }),

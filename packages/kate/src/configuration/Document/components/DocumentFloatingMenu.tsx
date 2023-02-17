@@ -28,6 +28,8 @@ export const floatingMenuButtonCss = [
     font-family: inherit;
     font-size: 14px;
     border-radius: 3px;
+    min-width: 0;
+    margin: 0;
 
     color: inherit;
 
