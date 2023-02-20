@@ -11,7 +11,7 @@ export const Document: PlatePluginComponent<{
 }> = ({ children, element, attributes }) => {
   const editor = useEditorRef();
 
-  const handlDocumentDoubleClick = async () => {
+  const handleDocumentDoubleClick = async () => {
     try {
       const newData = await documentSettingsStoreSelectors
         .settings()
@@ -26,7 +26,7 @@ export const Document: PlatePluginComponent<{
   return (
     <span
       contentEditable={false}
-      onDoubleClick={handlDocumentDoubleClick}
+      onDoubleClick={handleDocumentDoubleClick}
       style={{
         background: '#ccc',
         padding: '0.25em 0.5em',
