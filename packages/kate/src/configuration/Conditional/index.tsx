@@ -1,5 +1,5 @@
 import React from 'react';
-import { createPluginFactory, findHtmlParentElement, getPluginType, getPreventDefaultHandler, isMarkActive } from '@udecode/plate-core';
+import { createPluginFactory, findHtmlParentElement, getPluginType, getPreventDefaultHandler, isMarkActive, withProps } from '@udecode/plate-core';
 import { MarkToolbarButton, ToolbarButton } from '@udecode/plate-ui-toolbar';
 import { KateEditor } from '../../plateTypes';
 import { AddDocumentIcon } from '../Document/components/icons/AddDocumentIcon';
@@ -8,8 +8,9 @@ import { FormatBold } from '@styled-icons/material';
 import { onKeyDownToggleConditional } from './plugins/onKeyDownToggleConditional';
 import { toggleConditional } from './transforms/toggleConditional';
 import { IConditionalConfigItem } from './types';
+import { StyledLeaf } from '@udecode/plate-styled-components';
 
-const ELEMENT_CONDITIONAL = "conditional";
+export const ELEMENT_CONDITIONAL = "conditional";
 
 const createConditionalPlugin = createPluginFactory({
   key: ELEMENT_CONDITIONAL,
@@ -36,6 +37,7 @@ const createConditionalPlugin = createPluginFactory({
     ],
     query(el) {
       const blockAbove = findHtmlParentElement(el, 'P');
+      console.log("deserializeHtml query", {el, blockAbove});
       if (blockAbove?.dataset["conditional"]) return false;
 
       return !findHtmlParentElement(el, 'PRE');
@@ -62,7 +64,7 @@ export const createConditionalConfig = (
         active={!!editor?.selection && isMarkActive(editor, ELEMENT_CONDITIONAL!)}
         onMouseDown={
           editor
-            ? getPreventDefaultHandler(toggleConditional, editor, { key: ELEMENT_CONDITIONAL, clear: undefined, value: "nammo_sweden" })
+            ? getPreventDefaultHandler(toggleConditional, editor, { key: ELEMENT_CONDITIONAL, clear: undefined, value: { "org": "sweden"} })
             : undefined
         }
         icon={<FormatBold />}

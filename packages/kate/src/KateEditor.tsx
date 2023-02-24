@@ -12,12 +12,12 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { createAutoformatPlugin } from '@udecode/plate-autoformat';
 import { ELEMENT_CODE_BLOCK } from '@udecode/plate-code-block';
-import { Plate, TEditableProps } from '@udecode/plate-core';
+import { Plate, TEditableProps, withProps } from '@udecode/plate-core';
 import { createParagraphPlugin } from '@udecode/plate-paragraph';
 import { createDeserializeCsvPlugin } from '@udecode/plate-serializer-csv';
 import { createDeserializeDocxPlugin } from '@udecode/plate-serializer-docx';
 import { createDeserializeMdPlugin } from '@udecode/plate-serializer-md';
-import { StyledElement } from '@udecode/plate-styled-components';
+import { StyledElement, StyledLeaf } from '@udecode/plate-styled-components';
 import { createPlateUI, Toolbar } from '@udecode/plate-ui';
 import { version } from '../package.json';
 import { IKateConfigItem } from './configuration/types';
@@ -29,6 +29,7 @@ import {
   KateValue,
 } from './plateTypes';
 import { ToolbarButtons } from './ToolbarButtons';
+import { ELEMENT_CONDITIONAL } from './configuration';
 
 console.log(`KateEditor version ${version}`);
 
@@ -86,6 +87,13 @@ const KateEditor = (props: KateEditorProps) => {
         (prev, curr) => ({ ...prev, ...(curr.overrideComponents || {}) }),
         {}
       ),
+      [ELEMENT_CONDITIONAL]: withProps(StyledLeaf, {
+        styles: {
+          root: {
+            border: "2px dashed #ccc"
+          }
+        }
+      }) as any
     });
     console.log('props.config.', props.config);
     return {
