@@ -1,5 +1,7 @@
-import { EMarks, isMarkActive, TEditor, ToggleMarkPlugin, Value, withoutNormalizing } from '@udecode/plate-core';
+import { EMarks, getEndPoint, getParentNode, getStartPoint, isMarkActive, select, setNodes, setSelection, TEditor, ToggleMarkPlugin, unsetNodes, Value, withoutNormalizing } from '@udecode/plate-core';
 import castArray from 'lodash/castArray';
+import { ELEMENT_CONDITIONAL } from '..';
+import { getValidConditionalNodeEntry } from '../utils/getValidConditionalNode';
 import { removeConditional } from './removeConditional';
 
 export interface ToggleConditionalOptions<
@@ -23,21 +25,39 @@ export const toggleConditional = <
   editor: TEditor<V>,
   { key, clear, value }: ToggleConditionalOptions<V, K>
 ) => {
-  if (!editor.selection) return;
+  // Tagging of higher up nodes
+  const validNodeEntry = getValidConditionalNodeEntry(editor);
+
+  console.log("toggleConditional", {key, clear, value, editor, validNodeEntry, selection: editor.selection});
+
+  if (!validNodeEntry) return;
+
+  const [validNode, path] = validNodeEntry;
 
   withoutNormalizing(editor, () => {
-    const isActive = isMarkActive(editor, key);
-
-    if (isActive) {
-      removeConditional(editor, { key });
-      return;
+    if (validNode[ELEMENT_CONDITIONAL]) {
+      unsetNodes(editor, ELEMENT_CONDITIONAL, { at: path });
     }
-
-    if (clear) {
-      const clears: K[] = castArray(clear);
-      removeConditional(editor, { key: clears });
+    else {
+      setNodes(editor, { [ELEMENT_CONDITIONAL]: value } as any, { at: path });
     }
-
-    editor.addMark(key as string, value);
   });
+
+
+  // // Marking normally
+  // withoutNormalizing(editor, () => {
+  //   const isActive = isMarkActive(editor, key);
+
+  //   if (isActive) {
+  //     removeConditional(editor, { key });
+  //     return;
+  //   }
+
+  //   if (clear) {
+  //     const clears: K[] = castArray(clear);
+  //     removeConditional(editor, { key: clears });
+  //   }
+
+  //   editor.addMark(key as string, value);
+  // });
 };
