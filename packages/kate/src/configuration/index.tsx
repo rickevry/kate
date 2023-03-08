@@ -8,3 +8,4 @@ export * from './Italic';
 export * from './Link';
 export * from './Document';
 export * from './UrlLink';
+export * from './Conditional';
