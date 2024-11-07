@@ -33,11 +33,11 @@ import { ToolbarButtons } from './ToolbarButtons';
 console.log(`KateEditor version ${version}`);
 
 const createEditableProps = (readOnly: boolean, placeholder: string) =>
-  ({
-    placeholder: placeholder ?? 'Type here ...',
-    spellCheck: false,
-    readOnly,
-  } as TEditableProps<KateValue>);
+({
+  placeholder: placeholder ?? 'Type here ...',
+  spellCheck: false,
+  readOnly,
+} as TEditableProps<KateValue>);
 
 const styles: Record<string, CSSProperties> = {
   container: { position: 'relative' },
@@ -53,7 +53,7 @@ type KateEditorProps = {
   id?: string;
   customStyles?: Record<string, React.CSSProperties>;
 };
-function generateUUID() {
+export function generateUUID() {
   // Public Domain/MIT
   let d = new Date().getTime(); // Timestamp
   let d2 =
@@ -123,7 +123,16 @@ const KateEditor = (props: KateEditorProps) => {
     setEditableProps(createEditableProps(props.readOnly, props.placeholder));
   }
 
-  const [value, setValue] = useState<any>(props.value);
+  const [value, setValue] = useState<any>(props.value ?? [
+    {
+      type: "p",
+      children: [
+        {
+          text: ""
+        }
+      ]
+    }
+  ]);
 
   const handleChange = (nv: KateValue) => {
     setValue(nv);
