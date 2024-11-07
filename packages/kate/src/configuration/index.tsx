@@ -9,3 +9,4 @@ export * from './Link';
 export * from './Document';
 export * from './UrlLink';
 export * from './Conditional';
+export * from './PageShortcut';
