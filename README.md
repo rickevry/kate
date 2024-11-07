@@ -1,3 +1,31 @@
+# Kate
+
+## Setup
+
+### Set node version
+nvm use
+
+This wont work with .nvmrc if using nvm on windows.
+If you're using that version of nvm run this instead:
+
+nvm use 16.19.0
+
+### Install dependencies
+yarn install
+
+### Build
+yarn g:build
+
+
+
+
+
+
+
+
+
+
+
 <h1 align="center">
 Plate
 </h1>
