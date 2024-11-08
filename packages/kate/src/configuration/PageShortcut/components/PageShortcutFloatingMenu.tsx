@@ -82,8 +82,8 @@ export const PageShortcutFloatingMenu = (props: IProps) => {
       if (inputRef.current?.offsetParent) {
         clearInterval(intervalTimer);
         inputRef.current.focus();
-        inputRef.current.select();
         inputRef.current.value = props.nodeData?.pageData?.title ?? "";
+        inputRef.current.select();
       }
 
       counter += interval;
@@ -132,11 +132,16 @@ export const PageShortcutFloatingMenu = (props: IProps) => {
       return;
     }
   };
+  const handleTextKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key?.toLowerCase() === "enter") {
+      e.preventDefault();
+    }
+  };
   const handleTextKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const node = getSelectedPageShortcutNode(editor);
     if (!node) return;
 
-    if (e.key === "Enter") {
+    if (e.key?.toLowerCase() === "enter") {
       e.preventDefault();
       return;
     }
@@ -153,7 +158,7 @@ export const PageShortcutFloatingMenu = (props: IProps) => {
     <FloatingShortcutMenuRoot css={floatingMenuRootCss}>
       <div tw="px-2 py-1 flex flex-col gap-x-4">
         <div tw="w-auto">
-          <input type="text" placeholder={"Title"} onKeyUp={e => handleTextKeyUp(e)} onBlur={e => handleTextBlur(e)} css={inputCss} defaultValue={props.nodeData?.pageData?.title ?? ""} ref={inputRef} />
+          <input type="text" placeholder={"Title"} onKeyDown={e => handleTextKeyDown(e)} onKeyUp={e => handleTextKeyUp(e)} onBlur={e => handleTextBlur(e)} css={inputCss} defaultValue={props.nodeData?.pageData?.title ?? ""} ref={inputRef} />
         </div>
         <div tw="w-auto flex flex-row items-center">
           <PageShortcutEditButton
