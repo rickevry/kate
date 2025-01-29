@@ -21,6 +21,7 @@ import {
 import { BlockToolbarButton } from '@udecode/plate-ui-toolbar';
 import { KateEditor } from '../plateTypes';
 import { IKateConfigItem } from './types';
+import { getDefaultTippyTooltip } from '../ToolbarButtons';
 
 type HTypes = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 const headingsDefaultValue: HTypes[] = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
@@ -38,6 +39,7 @@ export const createHeadingConfig = (
             type={getPluginType(editor, ELEMENT_H1)}
             // tooltip={{ content: 'Header 1' } as TippyProps}
             icon={<LooksOne />}
+            tooltip={getDefaultTippyTooltip("Heading 1")}
           />
         );
       if (headings.includes('h2'))
@@ -46,6 +48,7 @@ export const createHeadingConfig = (
             type={getPluginType(editor, ELEMENT_H2)}
             // tooltip={{ content: 'Header 2' } as TippyProps}
             icon={<LooksTwo />}
+            tooltip={getDefaultTippyTooltip("Heading 2")}
           />
         );
       if (headings.includes('h3'))
@@ -54,6 +57,7 @@ export const createHeadingConfig = (
             type={getPluginType(editor, ELEMENT_H3)}
             // tooltip={{ content: 'Header 3' } as TippyProps}
             icon={<Looks3 />}
+            tooltip={getDefaultTippyTooltip("Heading 3")}
           />
         );
       if (headings.includes('h4'))
@@ -62,6 +66,7 @@ export const createHeadingConfig = (
             type={getPluginType(editor, ELEMENT_H4)}
             // tooltip={{ content: 'Header 4' } as TippyProps}
             icon={<Looks4 />}
+            tooltip={getDefaultTippyTooltip("Heading 4")}
           />
         );
       if (headings.includes('h5'))
@@ -70,6 +75,7 @@ export const createHeadingConfig = (
             type={getPluginType(editor, ELEMENT_H5)}
             // tooltip={{ content: 'Header 5' } as TippyProps}
             icon={<Looks5 />}
+            tooltip={getDefaultTippyTooltip("Heading 5")}
           />
         );
       if (headings.includes('h6'))
@@ -78,6 +84,7 @@ export const createHeadingConfig = (
             type={getPluginType(editor, ELEMENT_H6)}
             //  tooltip={{ content: 'Header 6' } as TippyProps}
             icon={<Looks6 />}
+            tooltip={getDefaultTippyTooltip("Heading 6")}
           />
         );
 

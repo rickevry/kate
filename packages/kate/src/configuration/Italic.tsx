@@ -5,6 +5,7 @@ import { getPluginType } from '@udecode/plate-core';
 import { MarkToolbarButton } from '@udecode/plate-ui-toolbar';
 import { KateEditor } from '../plateTypes';
 import { IKateConfigItem } from './types';
+import { getDefaultTippyTooltip } from '../ToolbarButtons';
 
 export const createItalicConfig = (): IKateConfigItem => {
   return {
@@ -13,6 +14,7 @@ export const createItalicConfig = (): IKateConfigItem => {
       <MarkToolbarButton
         type={getPluginType(editor, MARK_ITALIC)}
         icon={<FormatItalic />}
+        tooltip={getDefaultTippyTooltip("Italic")}
       />,
     ],
   };

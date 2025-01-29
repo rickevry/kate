@@ -8,6 +8,7 @@ import { createUrlLinkPlugin } from './util/createUrlLinkPlugin';
 import { insertUrlLink } from './util/insertUrLink';
 import { IUrlLinkConfigItemOptions } from './types';
 import { Link } from '@styled-icons/material';
+import { getDefaultTippyTooltip } from '../../ToolbarButtons';
 
 export const createUrlLinkConfig = (
   setttings: IUrlLinkConfigItemOptions
@@ -22,6 +23,7 @@ export const createUrlLinkConfig = (
     renderButtons: (editor: KateEditor) => [
       <ToolbarButton
         icon={<Link />}
+        tooltip={getDefaultTippyTooltip("URL links")}
         onMouseDown={async (event) => {
           if (!editor || !setttings.getData) return;
 

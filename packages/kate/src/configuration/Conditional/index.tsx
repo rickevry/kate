@@ -9,6 +9,7 @@ import { insertConditional } from './util/insertConditional';
 import { IConditionalConfigItemOptions } from './types';
 import { Link } from '@styled-icons/material';
 import { ConditionalIcon } from './components/icons/ConditionalIcon';
+import { getDefaultTippyTooltip } from '../../ToolbarButtons';
 
 export const createConditionalConfig = (
   settings: IConditionalConfigItemOptions
@@ -23,6 +24,7 @@ export const createConditionalConfig = (
     renderButtons: (editor: KateEditor) => [
       <ToolbarButton
         icon={<ConditionalIcon />}
+        tooltip={getDefaultTippyTooltip("Conditional")}
         onMouseDown={async (event) => {
           if (!editor || !settings.getData) return;
 

@@ -9,6 +9,7 @@ import { ToolbarButton } from '@udecode/plate-ui-toolbar';
 import { KateEditor } from '../plateTypes';
 import { indentPlugin } from '../plugins/indentPlugin';
 import { IKateConfigItem } from './types';
+import { getDefaultTippyTooltip } from '../ToolbarButtons';
 
 export const createIndentConfig = (): IKateConfigItem => {
   return {
@@ -22,6 +23,7 @@ export const createIndentConfig = (): IKateConfigItem => {
           e.preventDefault();
         }}
         icon={<FormatIndentDecrease />}
+        tooltip={getDefaultTippyTooltip("Decrease indentation")}
       />,
       <ToolbarButton
         onMouseDown={(e) => {
@@ -31,6 +33,7 @@ export const createIndentConfig = (): IKateConfigItem => {
           e.preventDefault();
         }}
         icon={<FormatIndentIncrease />}
+        tooltip={getDefaultTippyTooltip("Increase indentation")}
       />,
     ],
   };

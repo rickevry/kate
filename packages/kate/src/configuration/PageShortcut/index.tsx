@@ -10,6 +10,7 @@ import { insertPageShortcut } from './util/insertPageShortcut';
 import { IPageShortcutConfigItemOptions } from './types';
 import { findNode, useEditorRef, usePlateEditorRef, usePlateSelection } from '@udecode/plate-core';
 import { getSelectedPageShortcutNode } from './util/getSelectedPageShortcutNode';
+import { getDefaultTippyTooltip } from '../../ToolbarButtons';
 
 export const createPageShortcutConfig = (
   settings: IPageShortcutConfigItemOptions
@@ -41,6 +42,7 @@ export const createPageShortcutConfig = (
     renderButtons: (editor: KateEditor) => [
       <ToolbarButton
         icon={<AddPageShortcutIcon />}
+        tooltip={getDefaultTippyTooltip("Page shortcut")}
         onMouseDown={async (event) => {
           if (!editor || !settings.getData) return;
 

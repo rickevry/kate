@@ -24,5 +24,10 @@ export interface ToolbarButtonProps
    */
   tooltip?: TippyProps;
 
+  /**
+   * Simple tooltip using HTML title attribute.
+   */
+  simpleTooltip?: string;
+
   onMouseDown?: HTMLProps<HTMLSpanElement>['onMouseDown'];
 }

@@ -8,6 +8,7 @@ import { getPluginType } from '@udecode/plate-core';
 import { MarkToolbarButton } from '@udecode/plate-ui-toolbar';
 import { KateEditor } from '../plateTypes';
 import { IKateConfigItem } from './types';
+import { getDefaultTippyTooltip } from '../ToolbarButtons';
 
 export const createUnderlineConfig = (): IKateConfigItem => {
   return {
@@ -16,6 +17,7 @@ export const createUnderlineConfig = (): IKateConfigItem => {
       <MarkToolbarButton
         type={getPluginType(editor, MARK_UNDERLINE)}
         icon={<FormatUnderlined />}
+        tooltip={getDefaultTippyTooltip("Underline")}
       />,
     ],
   };

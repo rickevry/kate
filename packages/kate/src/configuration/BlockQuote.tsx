@@ -8,6 +8,7 @@ import { getPluginType } from '@udecode/plate-core';
 import { BlockToolbarButton } from '@udecode/plate-ui-toolbar';
 import { KateEditor } from '../plateTypes';
 import { IKateConfigItem } from './types';
+import { getDefaultTippyTooltip } from '../ToolbarButtons';
 
 export const createBlockQuoteConfig = (): IKateConfigItem => {
   return {
@@ -17,6 +18,7 @@ export const createBlockQuoteConfig = (): IKateConfigItem => {
         type={getPluginType(editor, ELEMENT_BLOCKQUOTE)}
         // tooltip={{ content: 'Blockquote' } as TippyProps}
         icon={<FormatQuote />}
+        tooltip={getDefaultTippyTooltip("Blockquote")}
       />,
     ],
   };

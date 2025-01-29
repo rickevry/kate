@@ -1,3 +1,5 @@
+import * as React from "react";
+
 // import React, {
 //     CSSProperties,
 //     useEffect,
@@ -87,6 +89,27 @@
 // } from '@udecode/plate-ui-toolbar';
 import { useEventPlateId } from '@udecode/plate-core';
 import { useMyPlateEditorRef } from './plateTypes';
+
+const TOOLBAR_BUTTON_STYLE: React.CSSProperties = {
+  border: "1px solid #aaa",
+  borderRadius: "3px",
+  fontSize: "12px",
+  fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+  padding: "3px 5px",
+  backgroundColor: "#fff"
+};
+
+export const getDefaultTippyTooltip = (tooltip: string): any => {
+  if (!tooltip) return;
+  
+  return {
+    content: <span style={TOOLBAR_BUTTON_STYLE}>{tooltip}</span>,
+    placement: "bottom-start",
+    offset: [0, 10],
+    className: "toolbar-tippy-tooltip"
+  };
+};
+
 
 export const ToolbarButtons = ({
   toolbarButtonRenderFuncs

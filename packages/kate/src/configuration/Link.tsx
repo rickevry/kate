@@ -14,6 +14,7 @@ import {
   StyledElementProps,
 } from '@udecode/plate-ui';
 import { IKateConfigItem } from './types';
+import { getDefaultTippyTooltip } from '../ToolbarButtons';
 
 interface ICreateLinkConfig {
   overrideComponent?: (
@@ -47,6 +48,6 @@ export const createLinkConfig = (
         renderAfterEditable: PlateFloatingLink,
       }),
     ],
-    renderButtons: () => [<LinkToolbarButton icon={<Link />} />],
+    renderButtons: () => [<LinkToolbarButton icon={<Link />} tooltip={getDefaultTippyTooltip("URL link")} />],
   };
 };

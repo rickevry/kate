@@ -5,6 +5,7 @@ import { getPluginType } from '@udecode/plate-core';
 import { MarkToolbarButton } from '@udecode/plate-ui-toolbar';
 import { KateEditor } from '../plateTypes';
 import { IKateConfigItem } from './types';
+import { getDefaultTippyTooltip } from '../ToolbarButtons';
 
 export const createBoldConfig = (): IKateConfigItem => {
   return {
@@ -13,6 +14,7 @@ export const createBoldConfig = (): IKateConfigItem => {
       <MarkToolbarButton
         type={getPluginType(editor, MARK_BOLD)}
         icon={<FormatBold />}
+        tooltip={getDefaultTippyTooltip("Bold")}
       />,
     ],
   };
